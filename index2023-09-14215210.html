@@ -1,0 +1,2761 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>自动化测试报告</title>
+
+	<style type='text/css'>
+			.node.level-1  ul{ display:none;} .node.level-1.active ul{display:block;}
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>自动化测试报告</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Sep 14, 2023 09:53:33 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='94.444%'><span class='strong'>34</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='5.556%'>2</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='94.444%'><span class='strong'>34</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='5.556%'>2</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>marketBuyTransactionTest</span>
+						<span class='test-time'>Sep 14, 2023 10:00:53 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:00:53 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:01:23 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 29s+941ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'><pre>java.lang.AssertionError: SpotTransactionTest_marketBuyTransactionTest_历史页面下单成交时间不对应！ expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at com.tapbit.test.spot.SpotTransactionStreamTest.marketBuyTransactionTest(SpotTransactionStreamTest.java:174)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+</pre></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>forgotPasswordPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:22:52 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:22:52 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:23:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 25s+311ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from nc_email_queue where email = 'zdh_5@gmail.com' order by create_time desc;</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{email_type=1, create_time=2023-09-14 22:23:11, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"175237","loginId":"zdh_5@gmail.com","verifyCode":"9h5Z8J1MezL/G8OfoZ1taw==","origin":"","sign":"e80087ad253f40f8914e24d0dc0229b2","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-09-14 22:23:11, sub_type=reset-loginpasswd-verify, user_id=3360103, id=19469, state=0, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-09-14 22:18:25, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"898612","loginId":"zdh_5@gmail.com","verifyCode":"XLYxNXPV4nL1P2fAiw0g0Q==","origin":"","sign":"e4e4dee0bf4848818e382d03dc585864","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-09-14 22:18:27, sub_type=reset-loginpasswd-verify, user_id=3360103, id=19467, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-09-14 22:08:24, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"712481","loginId":"zdh_5@gmail.com","verifyCode":"eVth2LYtfixXops/YepPTg==","origin":"","sign":"1e0dc50edc624014a2d4bec9a83101b2","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-09-14 22:08:26, sub_type=login-verify, user_id=3360103, id=19461, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-09-08 12:05:33, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"002669","loginId":"zdh_5@gmail.com","verifyCode":"0y4A82rQNa0fmoqJ6WaYRw==","origin":"","sign":"c5632d0f60ad4009acab93c1b7791b3d","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-09-08 12:05:35, sub_type=reset-loginpasswd-verify, user_id=3360103, id=19144, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-09-08 12:00:50, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"466005","loginId":"zdh_5@gmail.com","verifyCode":"pfuxEH/DD41rBEi1FpKsSw==","origin":"","sign":"32f88ecc771a42e187300cc37440f5d6","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-09-08 12:00:52, sub_type=reset-loginpasswd-verify, user_id=3360103, id=19142, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-09-08 11:50:56, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"096774","loginId":"zdh_5@gmail.com","verifyCode":"Vw7I3beF3iu8KwBrtVbszw==","origin":"","sign":"1a7358895ab543faa3863923b339ab3f","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-09-08 11:50:58, sub_type=login-verify, user_id=3360103, id=19137, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-09-07 21:55:44, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"010412","loginId":"zdh_5@gmail.com","verifyCode":"oCrokHUG6FOEQmGwdhGytw==","origin":"","sign":"50bff95e5b694f269bb76172820e96af","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-09-07 21:55:46, sub_type=reset-loginpasswd-verify, user_id=3360103, id=19118, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-09-07 21:50:29, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"776992","loginId":"zdh_5@gmail.com","verifyCode":"ZlXv5Gcaod1vyod8sT9q+g==","origin":"","sign":"ea09d5d4e6c84302aa9f6c05fcb2f074","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-09-07 21:50:30, sub_type=reset-loginpasswd-verify, user_id=3360103, id=19116, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-09-07 21:39:55, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"014053","loginId":"zdh_5@gmail.com","verifyCode":"fbm43UZ8n7REZeGAyyzdCQ==","origin":"","sign":"bbbba6b219004dc78425a6cb07997975","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-09-07 21:39:56, sub_type=login-verify, user_id=3360103, id=19113, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 20:05:55, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"312961","loginId":"zdh_5@gmail.com","verifyCode":"Jfuwa8JTE1Wm/ZCahLBVxg==","origin":"","sign":"0912562e2df8424fadf922a710915a35","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 20:05:56, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18789, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 20:01:08, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"529737","loginId":"zdh_5@gmail.com","verifyCode":"Yt/UmliPaMC4osr7wcCS5g==","origin":"","sign":"e412fe59a4414ac6bf66b88b377d0970","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 20:01:09, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18787, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 19:51:16, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"841216","loginId":"zdh_5@gmail.com","verifyCode":"lDJUUagWh1WvSc9CEtvTvQ==","origin":"","sign":"40ce18a645764cf88d8d83392800bc06","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 19:51:18, sub_type=login-verify, user_id=3360103, id=18784, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 19:16:08, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"669023","loginId":"zdh_5@gmail.com","verifyCode":"iXrX5xQvSHvGun+NgdpnnA==","origin":"","sign":"5ff94a387d164cdfabdc8d65cc878dc7","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 19:16:10, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18775, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 19:12:38, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"062755","loginId":"zdh_5@gmail.com","verifyCode":"2ryNFw/knw0zpOH9h7zDnQ==","origin":"","sign":"edd244bb24e44afe818f4e66507f36da","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 19:12:40, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18774, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 19:02:53, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"352301","loginId":"zdh_5@gmail.com","verifyCode":"I3nsnDaUwFNsHkkt5r7FSg==","origin":"","sign":"08e20ea1bb48456f99cc8aafcae7e085","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 19:02:55, sub_type=login-verify, user_id=3360103, id=18771, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 18:42:35, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"267539","loginId":"zdh_5@gmail.com","verifyCode":"MDSYa2wK+zNLeRIzdtD75Q==","origin":"","sign":"8030fdc6d9784f69a0b9cbee53410386","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 18:42:37, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18767, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 18:40:10, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"499981","loginId":"zdh_5@gmail.com","verifyCode":"BdLGhy9pHuL2qo9HQ0wogg==","origin":"","sign":"fe81e4f890f44d85b5faf167eda17872","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 18:40:12, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18766, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 18:25:16, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"037048","loginId":"zdh_5@gmail.com","verifyCode":"sMBmROJpHanuyrLaH38aEQ==","origin":"","sign":"633a35d304fc492f920c9c5eb6b83b2c","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 18:25:18, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18765, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 18:23:10, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"494757","loginId":"zdh_5@gmail.com","verifyCode":"417iywPZrrmQpNsYYgG7SQ==","origin":"","sign":"db01488b45c54e729dc43f335bbdd7f3","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 18:23:13, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18764, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 18:19:43, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"732975","loginId":"zdh_5@gmail.com","verifyCode":"E7X0Bd2RcsfjY60vZ+j3nw==","origin":"","sign":"5928be4a67e045378bf1a51f1a3fca27","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 18:19:45, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18763, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 18:17:45, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"338680","loginId":"zdh_5@gmail.com","verifyCode":"1ilxYLdE8r4Dcuhc8O80Pw==","origin":"","sign":"904231d162524364b9e3eee3aca66aab","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 18:17:47, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18762, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 18:14:55, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"052746","loginId":"zdh_5@gmail.com","verifyCode":"8lc5cg2/uLvFInPHoapENg==","origin":"","sign":"0ccb21a294ff4921baa003fa798ab2b2","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 18:14:56, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18761, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 16:13:46, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"260555","loginId":"zdh_5@gmail.com","verifyCode":"pTMmYm8WYas9uCu2wD+3bA==","origin":"","sign":"955f274003dd473693515e22d09170e1","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 16:13:48, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18758, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 16:05:40, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"743868","loginId":"zdh_5@gmail.com","verifyCode":"kcmwCjMrLiayUSWF7LQ70Q==","origin":"","sign":"0cc8b2a350c34777b7f848c0fc29da31","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 16:05:42, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18756, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 16:02:38, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"454565","loginId":"zdh_5@gmail.com","verifyCode":"sVeRhaZV4Ti3CYjD13PcmQ==","origin":"","sign":"ff810ccc9c3f4f52a0103e9f13baf747","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 16:02:40, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18755, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 16:00:30, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"850853","loginId":"zdh_5@gmail.com","verifyCode":"ybl4VRr0d0PE97JBmJAp4A==","origin":"","sign":"3a56197587e54ee1a0d9e2b8b6fdc6f5","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 16:00:32, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18754, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 15:58:44, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"424370","loginId":"zdh_5@gmail.com","verifyCode":"+Pl3bBPjz+vWMBqiK3Vmdg==","origin":"","sign":"11c6aa54f00f458cbcba19375efbf5fc","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 15:58:45, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18753, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 15:56:12, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"373680","loginId":"zdh_5@gmail.com","verifyCode":"gnm2TyXtiy3rayGIj5+Frg==","origin":"","sign":"bd461d5ef14e4aa388805a457693fa71","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 15:56:13, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18752, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 15:53:51, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"175866","loginId":"zdh_5@gmail.com","verifyCode":"gxGUAfkx+7YiFop9n+B98g==","origin":"","sign":"b86e3da3222a489fafa4a19350ef67a0","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 15:53:52, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18751, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 15:36:41, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"416803","loginId":"zdh_5@gmail.com","verifyCode":"WIzKoyqUQq7JE666noHuGg==","origin":"","sign":"b64ede84a4b646e3b616bf9195227358","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 15:36:43, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18749, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 15:34:55, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"314275","loginId":"zdh_5@gmail.com","verifyCode":"z+pzCMB2qWk5V1YyFLaKkA==","origin":"","sign":"dc0aa01085c24b3f8ba912a5ae8b6997","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 15:34:57, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18748, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 15:21:29, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"223380","loginId":"zdh_5@gmail.com","verifyCode":"7teyOlVuLgVP3HyFxGALGA==","origin":"","sign":"17bcbd77cce64a6b94082376ce23a872","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 15:21:31, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18746, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 15:18:23, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"133260","loginId":"zdh_5@gmail.com","verifyCode":"pTGxViMGsXR8lW/TPpcSQg==","origin":"","sign":"5701a87141084a0eaddab2965c9efc4c","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 15:18:25, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18745, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 14:58:08, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"081855","loginId":"zdh_5@gmail.com","verifyCode":"xhean9paYIRAsjJIG7qNJQ==","origin":"","sign":"9fc1c1c8028b4ad89b38c9330491f49b","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 14:58:10, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18744, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 14:56:22, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"087100","loginId":"zdh_5@gmail.com","verifyCode":"U7d0dop1sZ2keMquscHxnA==","origin":"","sign":"d1c82e1739a64e82b30d8c203c9eef25","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 14:56:24, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18743, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 14:54:00, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"777495","loginId":"zdh_5@gmail.com","verifyCode":"FTsmOgXtaNufmM2FYcdp2g==","origin":"","sign":"58b04a1622fc4b57814a7ab12afcef78","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 14:54:02, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18742, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-31 14:46:23, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"836744","loginId":"zdh_5@gmail.com","verifyCode":"psQbL2V+C/8tkCyGppcsXQ==","origin":"","sign":"44a227bfb13043d98ebff86dba13a7a0","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-31 14:46:25, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18741, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-30 18:07:04, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"995898","loginId":"zdh_5@gmail.com","verifyCode":"u68CqyDvXBpiTZnZyqy2Pw==","origin":"","sign":"77014dd4277c44818794c67b0f15d4cb","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-30 18:07:06, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18703, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-30 17:57:07, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"563209","loginId":"zdh_5@gmail.com","verifyCode":"uGtwB5rwcYGBHw4bsKfI3g==","origin":"","sign":"87d8899e25ed45129f8ea61b6f1fb2b7","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-30 17:57:08, sub_type=login-verify, user_id=3360103, id=18700, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-30 15:58:51, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"631192","loginId":"zdh_5@gmail.com","verifyCode":"E9tpY/eLobg+gurhhvtk1Q==","origin":"","sign":"7d4462b3f8904d28874247c349064421","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-30 15:58:53, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18690, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-30 15:48:58, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"327926","loginId":"zdh_5@gmail.com","verifyCode":"uNJ6RZmglj8mVYbT4ZszJw==","origin":"","sign":"de31e3946c00431c959a172b01f0f95c","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-30 15:49:00, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18689, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-30 15:44:33, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"687082","loginId":"zdh_5@gmail.com","verifyCode":"CzY1BlZX5ehQQfcBFZLF7w==","origin":"","sign":"45f3368cea1b437db4982296dc5f3925","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-30 15:44:35, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18687, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-30 15:35:51, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"876238","loginId":"zdh_5@gmail.com","verifyCode":"1FpKEMu65neOZxpvtxKMew==","origin":"","sign":"600d80274168467b97057b5a2859b2c1","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-30 15:35:53, sub_type=reset-loginpasswd-verify, user_id=3360103, id=18686, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-28 19:07:13, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"136649","loginId":"zdh_5@gmail.com","verifyCode":"WWqy59tA0okzgeSoS3+8cg==","origin":"","sign":"4e6bf539707845eea4a4835c03fcef7d","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3360103","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-28 19:07:15, sub_type=login-verify, user_id=3360103, id=18568, state=1, email=zdh_5@gmail.com}, {email_type=1, create_time=2023-08-28 18:28:29, biz_type=spot, ip=, lang_id=zh_TW, params={"site":"MAIN","verifyCodeRaw":"264450","loginId":"zdh_5@gmail.com","verifyCode":"DPfgdyBXQ/YXwrPk2T/hCA==","origin":"https://test.tapbit-test.ida-it.com","sign":"fd7d7a4e7ee342308429122caa66a597","expireMinute":"20","lang":"zh_TW","type":"30","brokerName":"Tapbit","userId":"0","email":"zdh_5@gmail.com"}, site=MAIN, update_time=2023-08-28 18:28:31, sub_type=register-verify, user_id=0, id=18564, state=1, email=zdh_5@gmail.com}]</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'><pre>java.lang.AssertionError: LogInPageTest_forgotPasswordPageTest_修改密码页面标题不正确！ expected [Two-Factor Verification] but found [Reset Password]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:575)
+	at com.tapbit.test.userCenter.LogInPageTest.forgotPasswordPageTest(LogInPageTest.java:1435)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+</pre></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>spotBuyTransactionPageTest</span>
+						<span class='test-time'>Sep 14, 2023 09:53:33 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 09:53:33 PM</span>
+	<span class='label end-time'>Sep 14, 2023 09:55:51 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 17s+767ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from trade_pair where id = 'ETHUSDT'</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{upcoming_amplitude=0.00, trade_protection_sell=0.0000, upcoming_limit_down=0, using_limit_up=0, using_limit_down=0, refresh_time=null, upcoming_period=0, update_time=2023-02-27 10:50:09, trade_protection=0, using_amplitude=0.00, id=ETHUSDT, quote_asset=USDT, upcoming_limit_up=0, create_time=2023-02-27 10:50:09, pre_sell_time=null, initial_price=1640.000000000000000000, trade_protection_minute=0, i18n={"zh":"ETH","en":"ETH","ms":"","pt":"","vi":"","ja":"","ko":"","zhSpec":"","enSpec":"","trSpec":"","ptSpec":"","viSpec":"","jaSpec":"","koSpec":""}, using_limit_ban=0, using_hidden=0, price_precision=2, base_asset=ETH, trade_start_time=2023-02-27 10:49:00, name=ETH/USDT, trade_protection_buy=0.0000, amount_precision=4, kline_bits=null, pre_sell=0, using_period=0, sell_disabled=0}]</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1 ÷ 100 = 0.01</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1629.57 + 0.01 = 1629.58</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1629.58 = 1629.58</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1629.57 + 0.01 = 1629.58</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1629.58 = 1629.58</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from trade_pair where id = 'ETHUSDT'</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{upcoming_amplitude=0.00, trade_protection_sell=0.0000, upcoming_limit_down=0, using_limit_up=0, using_limit_down=0, refresh_time=null, upcoming_period=0, update_time=2023-02-27 10:50:09, trade_protection=0, using_amplitude=0.00, id=ETHUSDT, quote_asset=USDT, upcoming_limit_up=0, create_time=2023-02-27 10:50:09, pre_sell_time=null, initial_price=1640.000000000000000000, trade_protection_minute=0, i18n={"zh":"ETH","en":"ETH","ms":"","pt":"","vi":"","ja":"","ko":"","zhSpec":"","enSpec":"","trSpec":"","ptSpec":"","viSpec":"","jaSpec":"","koSpec":""}, using_limit_ban=0, using_hidden=0, price_precision=2, base_asset=ETH, trade_start_time=2023-02-27 10:49:00, name=ETH/USDT, trade_protection_buy=0.0000, amount_precision=4, kline_bits=null, pre_sell=0, using_period=0, sell_disabled=0}]</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1 ÷ 10000.0 = 0.0001</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：0.9998 + 0.0001 = 0.9999</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.9999 = 0.9999</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：0.9999 + 0.0001 = 1.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1.0000 = 1.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：0.98 + 0.01 = 0.99</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.99 = 0.99</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：0.99 + 0.01 = 1.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1.00 = 1.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000074165.55 ÷ 2 = 500037082.775</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：500037082 = 500037082</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：25 ÷ 100 = 0.25</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000074165.55 × 0.25 = 250018541.3875</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：250018541 = 250018541</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：50 ÷ 100 = 0.5</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000074165.55 × 0.5 = 500037082.775</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：500037082 = 500037082</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：75 ÷ 100 = 0.75</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000074165.55 × 0.75 = 750055624.1625</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：750055624 = 750055624</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：100 ÷ 100 = 1</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000074165.55 × 1 = 1000074165.55</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1000074165 = 1000074165</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：0.98 + 0.01 = 0.99</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.99 = 0.99</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：0.99 + 0.01 = 1.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1.00 = 1.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：25 ÷ 100 = 0.25</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000074165.55 × 0.25 = 250018541.3875</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：250018541 = 250018541</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：50 ÷ 100 = 0.5</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000074165.55 × 0.5 = 500037082.775</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：500037082 = 500037082</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：75 ÷ 100 = 0.75</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000074165.55 × 0.75 = 750055624.1625</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：750055624 = 750055624</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：100 ÷ 100 = 1</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000074165.55 × 1 = 1000074165.55</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1000074165 = 1000074165</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000074165.55 ÷ 2 = 500037082.775</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：500037082 = 500037082</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>spotSellTransactionPageTest</span>
+						<span class='test-time'>Sep 14, 2023 09:55:57 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 09:55:57 PM</span>
+	<span class='label end-time'>Sep 14, 2023 09:58:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 9s+466ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from trade_pair where id = 'ETHUSDT'</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{upcoming_amplitude=0.00, trade_protection_sell=0.0000, upcoming_limit_down=0, using_limit_up=0, using_limit_down=0, refresh_time=null, upcoming_period=0, update_time=2023-02-27 10:50:09, trade_protection=0, using_amplitude=0.00, id=ETHUSDT, quote_asset=USDT, upcoming_limit_up=0, create_time=2023-02-27 10:50:09, pre_sell_time=null, initial_price=1640.000000000000000000, trade_protection_minute=0, i18n={"zh":"ETH","en":"ETH","ms":"","pt":"","vi":"","ja":"","ko":"","zhSpec":"","enSpec":"","trSpec":"","ptSpec":"","viSpec":"","jaSpec":"","koSpec":""}, using_limit_ban=0, using_hidden=0, price_precision=2, base_asset=ETH, trade_start_time=2023-02-27 10:49:00, name=ETH/USDT, trade_protection_buy=0.0000, amount_precision=4, kline_bits=null, pre_sell=0, using_period=0, sell_disabled=0}]</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1 ÷ 100 = 0.01</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1629.55 + 0.01 = 1629.56</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1629.56 = 1629.56</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1629.55 + 0.01 = 1629.56</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1629.56 = 1629.56</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from trade_pair where id = 'ETHUSDT'</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{upcoming_amplitude=0.00, trade_protection_sell=0.0000, upcoming_limit_down=0, using_limit_up=0, using_limit_down=0, refresh_time=null, upcoming_period=0, update_time=2023-02-27 10:50:09, trade_protection=0, using_amplitude=0.00, id=ETHUSDT, quote_asset=USDT, upcoming_limit_up=0, create_time=2023-02-27 10:50:09, pre_sell_time=null, initial_price=1640.000000000000000000, trade_protection_minute=0, i18n={"zh":"ETH","en":"ETH","ms":"","pt":"","vi":"","ja":"","ko":"","zhSpec":"","enSpec":"","trSpec":"","ptSpec":"","viSpec":"","jaSpec":"","koSpec":""}, using_limit_ban=0, using_hidden=0, price_precision=2, base_asset=ETH, trade_start_time=2023-02-27 10:49:00, name=ETH/USDT, trade_protection_buy=0.0000, amount_precision=4, kline_bits=null, pre_sell=0, using_period=0, sell_disabled=0}]</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1 ÷ 10000.0 = 0.0001</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：0.9998 + 0.0001 = 0.9999</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.9999 = 0.9999</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：0.9999 + 0.0001 = 1.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1.0000 = 1.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：0.98 + 0.01 = 0.99</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.99 = 0.99</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：0.99 + 0.01 = 1.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1.00 = 1.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000009961.20660000 ÷ 2 = 500004980.60330000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：500004980 = 500004980</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：25 ÷ 100 = 0.25</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000009961.20660000 × 0.25 = 250002490.3016500000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：250002490 = 250002490</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：50 ÷ 100 = 0.5</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000009961.20660000 × 0.5 = 500004980.603300000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：500004980 = 500004980</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：75 ÷ 100 = 0.75</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000009961.20660000 × 0.75 = 750007470.9049500000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：750007470 = 750007470</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：100 ÷ 100 = 1</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000009961.20660000 × 1 = 1000009961.20660000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1000009961 = 1000009961</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from trade_pair where id = 'ETHUSDT'</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{upcoming_amplitude=0.00, trade_protection_sell=0.0000, upcoming_limit_down=0, using_limit_up=0, using_limit_down=0, refresh_time=null, upcoming_period=0, update_time=2023-02-27 10:50:09, trade_protection=0, using_amplitude=0.00, id=ETHUSDT, quote_asset=USDT, upcoming_limit_up=0, create_time=2023-02-27 10:50:09, pre_sell_time=null, initial_price=1640.000000000000000000, trade_protection_minute=0, i18n={"zh":"ETH","en":"ETH","ms":"","pt":"","vi":"","ja":"","ko":"","zhSpec":"","enSpec":"","trSpec":"","ptSpec":"","viSpec":"","jaSpec":"","koSpec":""}, using_limit_ban=0, using_hidden=0, price_precision=2, base_asset=ETH, trade_start_time=2023-02-27 10:49:00, name=ETH/USDT, trade_protection_buy=0.0000, amount_precision=4, kline_bits=null, pre_sell=0, using_period=0, sell_disabled=0}]</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1 ÷ 10000.0 = 0.0001</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：0.9998 + 0.0001 = 0.9999</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.9999 = 0.9999</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：0.9999 + 0.0001 = 1.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1.0000 = 1.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：25 ÷ 100 = 0.25</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000009961.20660000 × 0.25 = 250002490.3016500000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：250002490 = 250002490</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：50 ÷ 100 = 0.5</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000009961.20660000 × 0.5 = 500004980.603300000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：500004980 = 500004980</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：75 ÷ 100 = 0.75</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000009961.20660000 × 0.75 = 750007470.9049500000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：750007470 = 750007470</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：100 ÷ 100 = 1</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000009961.20660000 × 1 = 1000009961.20660000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1000009961 = 1000009961</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000009961.20660000 ÷ 2 = 500004980.60330000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：500004980 = 500004980</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>spotTransactionDrawerPageTest</span>
+						<span class='test-time'>Sep 14, 2023 09:58:13 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 09:58:13 PM</span>
+	<span class='label end-time'>Sep 14, 2023 09:58:53 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 39s+303ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：17690.00 > 1629.59</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1629.59 > 90.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：90.00 > 6.66</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：6.66 > 0.50000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.50000 > 0.06914</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.06914 < 0.50000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.50000 < 6.66</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：6.66 < 90.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：90.00 < 1629.59</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1629.59 < 17690.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：16.84 > 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 < 16.84</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：17690.00 > 1629.59</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1629.59 > 100.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：100.00 = 100.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：100.00 > 90.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：90.00 > 6.66</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：6.66 > 1.80</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1.80 > 1.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1.0000 = 1.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：2.3456E-12 < 2.271E-9</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：2.271E-9 < 2.7955E-7</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：2.7955E-7 < 0.00000775</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00000775 < 0.06914</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.06914 < 0.50000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.50000 < 0.5845</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.5845 < 1.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1.0000 = 1.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：16.84 > 0.81</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.81 > 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：-0.99 = -0.99</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：-0.99 < 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：0.00 = 0.00</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>limitBuyTransactionTest</span>
+						<span class='test-time'>Sep 14, 2023 10:00:07 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:00:07 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:00:47 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 39s+846ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from  trade_pair_config where trade_pair = 'ETHUSDT'</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{taker_fee_rate=0.0010, create_time=2023-02-27 10:50:09, trade_bits=0, min_amount=0.01000000, min_notional=0.01000000, sort=2, maker_fee_rate=0.0010, price_fluctuation=0.50, bank=MAIN, update_time=2023-06-16 11:01:09, latest_start_time=0, site=MAIN, is_hot=0, latest_end_time=0, hot_end_time=0, trade_pair_group=USDT, is_latest=0, hot_start_time=0, trade_pair=ETHUSDT, status=1}]</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000 × 10 = 10000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：10000 × 0.0010 = 10.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000 × 10 = 10000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：10.0000 + 10000 = 10010.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：10010.0000 = 10010.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000074165.55 - 10010.0000 = 1000064155.5500</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1000064155.5500 = 1000064155.55</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：10 = 10.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1000 = 1000.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：10 = 10.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1000 = 1000.00</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>limitSellTransactionTest</span>
+						<span class='test-time'>Sep 14, 2023 10:01:29 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:01:29 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:02:12 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 42s+287ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from  trade_pair_config where trade_pair = 'ETHUSDT'</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{taker_fee_rate=0.0010, create_time=2023-02-27 10:50:09, trade_bits=0, min_amount=0.01000000, min_notional=0.01000000, sort=2, maker_fee_rate=0.0010, price_fluctuation=0.50, bank=MAIN, update_time=2023-06-16 11:01:09, latest_start_time=0, site=MAIN, is_hot=0, latest_end_time=0, hot_end_time=0, trade_pair_group=USDT, is_latest=0, hot_start_time=0, trade_pair=ETHUSDT, status=1}]</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：3000 × 10 = 30000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：3000 × 10 = 30000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：30000 × 0.0010 = 30.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：30000 - 30.0000 = 29970.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：29970.0000 = 29970.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000009961.21270000 - 10 = 1000009951.21270000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1000009951.21270000 = 1000009951.21270000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：10 = 10.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：3000 = 3000.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：10 = 10.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：3000 = 3000.00</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>marketSellTransactionTest</span>
+						<span class='test-time'>Sep 14, 2023 10:02:18 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:02:18 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:02:49 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 31s+267ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1 = 1.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：0 + 1 = 1</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1 = 1</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>算式：1000009961.21270000 - 1 = 1000009960.21270000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>比较：1000009960.21270000 = 1000009960.21270000</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>emailLogInPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:03:38 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:03:38 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:04:04 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 25s+440ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>phoneLogInPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:04:13 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:04:13 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:04:44 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 30s+896ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>emailSecondVerificationPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:04:50 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:04:50 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:06:19 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 29s+571ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>phoneSecondVerificationPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:06:26 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:06:26 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:07:52 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 25s+662ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>emailAndGoogleSecondVerificationPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:07:58 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:07:58 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:09:31 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 32s+699ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>phoneAndGoogleSecondVerificationPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:09:37 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:09:37 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:11:08 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 31s+626ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>phoneAndEmailSecondVerificationPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:11:15 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:11:15 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:13:49 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 34s+466ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='16'>
+					<div class='test-heading'>
+						<span class='test-name'>emailForgotPasswordPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:13:56 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:13:56 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:14:11 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+650ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>phoneForgotPasswordPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:14:19 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:14:19 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:14:56 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+387ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Please select a country or regiontoast验证成功</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>emailTwoForgotPasswordPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:15:02 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:15:02 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:16:27 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 24s+598ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>phoneTwoForgotPasswordPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:16:33 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:16:33 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:17:59 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 25s+533ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='20'>
+					<div class='test-heading'>
+						<span class='test-name'>emailAndGoogleTwoForgotPasswordPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:18:05 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:18:05 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:19:35 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 29s+869ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>phoneAndGoogleTwoForgotPasswordPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:19:42 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:19:42 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:21:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 32s+218ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='22'>
+					<div class='test-heading'>
+						<span class='test-name'>phoneAndEmailTwoForgotPasswordPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:21:20 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:21:20 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:22:46 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 25s+198ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='23'>
+					<div class='test-heading'>
+						<span class='test-name'>emailLogInTest</span>
+						<span class='test-time'>Sep 14, 2023 10:24:07 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:24:07 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:24:25 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 18s+160ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='24'>
+					<div class='test-heading'>
+						<span class='test-name'>phoneLogInTest</span>
+						<span class='test-time'>Sep 14, 2023 10:24:31 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:24:31 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:24:53 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 22s+121ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='25'>
+					<div class='test-heading'>
+						<span class='test-name'>googleSecondVerificationTest</span>
+						<span class='test-time'>Sep 14, 2023 10:24:58 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:24:58 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:25:22 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 23s+372ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='26'>
+					<div class='test-heading'>
+						<span class='test-name'>emailSecondVerificationTest</span>
+						<span class='test-time'>Sep 14, 2023 10:25:27 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:25:27 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:25:54 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 27s+653ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from nc_email_queue where email = 'zdh_2@qq.com' order by create_time desc;</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{email_type=1, create_time=2023-09-14 22:25:46, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"299383","loginId":"zdh_2@qq.com","verifyCode":"7HRyw6wSNLuH/MLpMvHjXw==","origin":"","sign":"2cdbd3f0308e4f46843befcda55273b4","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-09-14 22:25:47, sub_type=login-verify, user_id=3350451, id=19470, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-09-08 12:08:30, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"364784","loginId":"zdh_2@qq.com","verifyCode":"2jr4w914Lk6XyM/UgsDMAQ==","origin":"","sign":"b0b591972e7243f9a7b3227d9c8dc1b9","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-09-08 12:08:31, sub_type=login-verify, user_id=3350451, id=19145, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-31 20:08:56, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"864013","loginId":"zdh_2@qq.com","verifyCode":"g5clS3mC6wRnsyDU5geoiA==","origin":"","sign":"f5fcfc251c844f16ba89fb1c183c0d1c","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-31 20:08:58, sub_type=login-verify, user_id=3350451, id=18790, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-31 19:19:03, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"415273","loginId":"zdh_2@qq.com","verifyCode":"HpGPiGnkQ+6/WRC+5skJHQ==","origin":"","sign":"1371d4a44a1444fd9fa94d84d82c8b8c","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-31 19:19:05, sub_type=login-verify, user_id=3350451, id=18776, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-25 18:56:46, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"860297","loginId":"zdh_2@qq.com","verifyCode":"BTTBkBr/EOs7XcDP7UjyrA==","origin":"","sign":"973ee735d0a0406aac4c4af09cb3e342","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-25 18:56:48, sub_type=reset-loginpasswd-verify, user_id=3350451, id=18448, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-25 12:08:17, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"700968","loginId":"zdh_2@qq.com","verifyCode":"MxeBAAg4/M1VSl8eQYrrPQ==","origin":"","sign":"7821b60d67df46399b364ec190935d62","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-25 12:08:19, sub_type=login-verify, user_id=3350451, id=18431, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-23 20:25:58, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"991031","loginId":"zdh_2@qq.com","verifyCode":"zmjfjlPWs8U5sdsa3BKSTw==","origin":"","sign":"e893100771b14895a78245b65f190108","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-23 20:26:00, sub_type=login-verify, user_id=3350451, id=18211, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-23 20:17:48, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"443103","loginId":"zdh_2@qq.com","verifyCode":"nLx/wGuPeml3NspnkMt55Q==","origin":"","sign":"f9c6595870644412a5bbf8f5cfd6caed","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-23 20:17:49, sub_type=login-verify, user_id=3350451, id=18210, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-23 18:51:18, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"590075","loginId":"zdh_2@qq.com","verifyCode":"TONiOmaXSuBWV7+paF/ioQ==","origin":"","sign":"6436587b6d5a4f939e7df51338eaafcd","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-23 18:51:19, sub_type=login-verify, user_id=3350451, id=18208, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-23 18:42:44, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"273514","loginId":"zdh_2@qq.com","verifyCode":"ZcfQuooBC3pNjtfAj5IF7w==","origin":"","sign":"6a2228fd9abe486a973f505f0f6bac00","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-23 18:42:45, sub_type=login-verify, user_id=3350451, id=18204, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-23 10:04:38, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"030817","loginId":"zdh_2@qq.com","verifyCode":"/d0t4XooJA4DNrXQU0tHGw==","origin":"","sign":"d1e40d639f604e02bf56c8db42770dea","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-23 10:04:40, sub_type=login-verify, user_id=3350451, id=18125, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-23 09:54:31, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"133011","loginId":"zdh_2@qq.com","verifyCode":"H7Ktq8oJ4A4L6BWZ7O0l+g==","origin":"","sign":"f96ecdefeae140d6bf960e074b8be783","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-23 09:54:33, sub_type=login-verify, user_id=3350451, id=18123, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-23 09:48:50, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"309636","loginId":"zdh_2@qq.com","verifyCode":"EeQKhrx4QK8bIlR1YJ8abw==","origin":"","sign":"b366a0d67c114e8597428160896fe61a","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-23 09:48:51, sub_type=login-verify, user_id=3350451, id=18122, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-22 19:08:45, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"600331","loginId":"zdh_2@qq.com","verifyCode":"YZH8/daVM7GLJWoWjzHWiA==","origin":"","sign":"b5af2a92109b4284a3400a7ec5b0e5a7","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-22 19:08:47, sub_type=login-verify, user_id=3350451, id=18106, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-22 19:07:17, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"137453","loginId":"zdh_2@qq.com","verifyCode":"pP4YhiyEwCybNjTIaYTJKA==","origin":"","sign":"448dc81e4cad4183b5b3d848d1f5ce61","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-22 19:07:19, sub_type=login-verify, user_id=3350451, id=18105, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-22 19:02:46, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"450779","loginId":"zdh_2@qq.com","verifyCode":"WXP+lMzf6bldvO8fkggb6Q==","origin":"","sign":"3f73439276e447e4878029e393f1c770","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-22 19:02:48, sub_type=login-verify, user_id=3350451, id=18104, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-22 18:59:32, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"556835","loginId":"zdh_2@qq.com","verifyCode":"/UvP5AbOU+sOw9r6O5YkBg==","origin":"","sign":"e6660b8c15b144d286b8c278bfa15b0a","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-22 18:59:33, sub_type=login-verify, user_id=3350451, id=18103, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-22 17:05:36, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"122398","loginId":"zdh_2@qq.com","verifyCode":"nBytycRXPiLJ4uiySacBRQ==","origin":"","sign":"538385c59ed34966b9c850e4fee5817e","expireMinute":"20","lang":"en_US","type":"25","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-22 17:05:37, sub_type=bind-googleauth-verify, user_id=3350451, id=18098, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-22 17:04:11, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"975341","loginId":"zdh_2@qq.com","verifyCode":"WJAucjNuKVPW4ed/NHYuBw==","origin":"","sign":"1bc0c9359539497e9b91104c398943f2","expireMinute":"20","lang":"en_US","type":"40","brokerName":"Tapbit","userId":"3350451","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-22 17:04:12, sub_type=login-verify, user_id=3350451, id=18096, state=1, email=zdh_2@qq.com}, {email_type=1, create_time=2023-08-22 17:02:38, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"065211","loginId":"zdh_2@qq.com","verifyCode":"K0Y7vXAdT2V/QEgKXZLVtw==","origin":"","sign":"08ad3896253a4f9eb8a3fbf524c14777","expireMinute":"20","lang":"en_US","type":"30","brokerName":"Tapbit","userId":"0","email":"zdh_2@qq.com"}, site=MAIN, update_time=2023-08-22 17:02:40, sub_type=register-verify, user_id=0, id=18095, state=1, email=zdh_2@qq.com}]</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='27'>
+					<div class='test-heading'>
+						<span class='test-name'>phoneSecondVerificationTest</span>
+						<span class='test-time'>Sep 14, 2023 10:26:00 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:26:00 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:26:27 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 26s+585ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from nc_sms_queue where phone = '15711491004' order by create_time desc;</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{create_time=2023-09-14 22:26:18, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"770661","verifyCode":"9K0fMwBxLsjG/BoT3VEBsg==","phone":"15711491004","ip":"39.105.139.176","time":"1694701578663","expireMinute":"10","lang":"en_US","type":"9","brokerName":"Tapbit"}, site=MAIN, update_time=2023-09-14 22:26:18, sub_type=loginVerify, user_id=3350452, phone=15711491004, id=2616, state=2}, {create_time=2023-09-08 12:09:01, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"958379","verifyCode":"TTxfWZQ6e8/8mth+seamSQ==","phone":"15711491004","ip":"39.105.139.176","time":"1694146141973","expireMinute":"10","lang":"en_US","type":"9","brokerName":"Tapbit"}, site=MAIN, update_time=2023-09-08 12:09:02, sub_type=loginVerify, user_id=3350452, phone=15711491004, id=2548, state=2}, {create_time=2023-09-07 21:59:03, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"366059","verifyCode":"NecmnDisskFsIAg4T87J/A==","phone":"15711491004","ip":"39.105.139.176","time":"1694095143757","expireMinute":"10","lang":"en_US","type":"9","brokerName":"Tapbit"}, site=MAIN, update_time=2023-09-07 21:59:03, sub_type=loginVerify, user_id=3350452, phone=15711491004, id=2538, state=2}, {create_time=2023-08-31 20:09:30, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"437236","verifyCode":"N+IWjU3QAihf0IqdISifgw==","phone":"15711491004","ip":"39.105.139.176","time":"1693483770094","expireMinute":"10","lang":"en_US","type":"9","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-31 20:09:30, sub_type=loginVerify, user_id=3350452, phone=15711491004, id=2470, state=2}, {create_time=2023-08-31 19:19:35, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"992860","verifyCode":"jnLIuHeKCcpETFGasA8aZg==","phone":"15711491004","ip":"39.105.139.176","time":"1693480774988","expireMinute":"10","lang":"en_US","type":"9","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-31 19:19:35, sub_type=loginVerify, user_id=3350452, phone=15711491004, id=2460, state=2}, {create_time=2023-08-23 20:26:53, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"211731","verifyCode":"ZrBKRuYEXv6kdm0ZCnKOvg==","phone":"15711491004","ip":"39.105.139.176","time":"1692793613456","expireMinute":"10","lang":"en_US","type":"9","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 20:26:53, sub_type=loginVerify, user_id=3350452, phone=15711491004, id=2382, state=2}, {create_time=2023-08-23 18:52:29, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"399455","verifyCode":"2J3r0f4/boz+zq57/3hv/A==","phone":"15711491004","ip":"39.105.139.176","time":"1692787949847","expireMinute":"10","lang":"en_US","type":"9","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 18:52:29, sub_type=loginVerify, user_id=3350452, phone=15711491004, id=2379, state=2}, {create_time=2023-08-23 18:43:11, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"378141","verifyCode":"G44jVFeXDA9+75yot8x10g==","phone":"15711491004","ip":"39.105.139.176","time":"1692787391934","expireMinute":"10","lang":"en_US","type":"9","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 18:43:11, sub_type=loginVerify, user_id=3350452, phone=15711491004, id=2377, state=2}, {create_time=2023-08-23 10:06:39, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"583864","verifyCode":"Z3zY0e2P+/bT1whZLtoluw==","phone":"15711491004","ip":"39.105.139.176","time":"1692756399983","expireMinute":"10","lang":"en_US","type":"9","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 10:06:40, sub_type=loginVerify, user_id=3350452, phone=15711491004, id=2365, state=2}, {create_time=2023-08-23 09:55:22, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"117768","verifyCode":"xPfSmZpvLUu0XVpu02EzCQ==","phone":"15711491004","ip":"39.105.139.176","time":"1692755722405","expireMinute":"10","lang":"en_US","type":"9","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 09:55:22, sub_type=loginVerify, user_id=3350452, phone=15711491004, id=2364, state=2}, {create_time=2023-08-23 09:49:19, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"777261","verifyCode":"eRsz3KzY1ze6KRbeyy/B7w==","phone":"15711491004","ip":"39.105.139.176","time":"1692755359772","expireMinute":"10","lang":"en_US","type":"9","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 09:49:19, sub_type=loginVerify, user_id=3350452, phone=15711491004, id=2363, state=2}, {create_time=2023-08-22 19:58:41, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"457560","verifyCode":"CRirHc4BbbzremAIys8Vsg==","phone":"15711491004","ip":"39.105.139.176","time":"1692705521801","expireMinute":"10","lang":"en_US","type":"9","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-22 19:58:41, sub_type=loginVerify, user_id=3350452, phone=15711491004, id=2362, state=2}, {create_time=2023-08-22 19:57:06, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"864357","verifyCode":"KNtLZo6BqsoSxTo22vVsvQ==","phone":"15711491004","ip":"39.105.139.176","time":"1692705426784","expireMinute":"10","lang":"en_US","type":"9","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-22 19:57:06, sub_type=loginVerify, user_id=3350452, phone=15711491004, id=2361, state=2}, {create_time=2023-08-22 19:11:03, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"385370","verifyCode":"muFhommGlsGnTbZ5k9sjvg==","phone":"15711491004","ip":"39.105.139.176","time":"1692702663591","expireMinute":"10","lang":"en_US","type":"48","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-22 19:11:03, sub_type=RegisterVerify, user_id=0, phone=15711491004, id=2360, state=2}]</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='28'>
+					<div class='test-heading'>
+						<span class='test-name'>emailForgotPasswordTest</span>
+						<span class='test-time'>Sep 14, 2023 10:26:31 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:26:31 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:27:15 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 43s+775ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Update sql is: update user_base_info set passwd = '$2a$10$6NfvfXzfzB3wJbnBlY4R.Or9IzmmWOh5CjzpGrybphcy.owvgOwVi' where email = 'zdh_3@gmail.com' 执行更新操作成功！</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from nc_email_queue where email = 'zdh_3@gmail.com' order by create_time desc;</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{email_type=1, create_time=2023-09-14 22:26:52, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"568617","loginId":"zdh_3@gmail.com","verifyCode":"3x5StgPs7sN+eimEHunLzA==","origin":"","sign":"bba39b91393045dba89df73f3f725632","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-09-14 22:26:52, sub_type=reset-loginpasswd-verify, user_id=3350454, id=19471, state=0, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-09-08 12:09:40, biz_type=risk-execute-api, ip=, lang_id=en_US, params={"currentTime":"2023-09-08 04:09:40","brokerName":"Tapbit"}, site=MAIN, update_time=2023-09-08 12:09:41, sub_type=ResetLoginPassword, user_id=3350454, id=19147, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-09-08 12:09:31, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"028654","loginId":"zdh_3@gmail.com","verifyCode":"nua1I0yNvASJP3YsbHi02A==","origin":"","sign":"9e900656bc704ee194c7a6cf8f1fdafe","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-09-08 12:09:33, sub_type=reset-loginpasswd-verify, user_id=3350454, id=19146, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-09-07 21:59:51, biz_type=risk-execute-api, ip=, lang_id=en_US, params={"currentTime":"2023-09-07 13:59:51","brokerName":"Tapbit"}, site=MAIN, update_time=2023-09-07 21:59:53, sub_type=ResetLoginPassword, user_id=3350454, id=19120, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-09-07 21:59:40, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"524725","loginId":"zdh_3@gmail.com","verifyCode":"nBGZ6VF5j6STyPHl0bW+1A==","origin":"","sign":"6d0e39b8337049cd84005a80c3d4cd04","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-09-07 21:59:42, sub_type=reset-loginpasswd-verify, user_id=3350454, id=19119, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-31 20:10:11, biz_type=risk-execute-api, ip=, lang_id=en_US, params={"currentTime":"2023-08-31 12:10:11","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-31 20:10:13, sub_type=ResetLoginPassword, user_id=3350454, id=18792, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-31 20:10:03, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"752513","loginId":"zdh_3@gmail.com","verifyCode":"MIYrlVK/nXYmAxGe5v6gJA==","origin":"","sign":"b0eb64e8ebd94f85a222d7b7785f0ec6","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-31 20:10:04, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18791, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-31 19:32:35, biz_type=risk-execute-api, ip=, lang_id=en_US, params={"currentTime":"2023-08-31 11:32:35","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-31 19:32:36, sub_type=ResetLoginPassword, user_id=3350454, id=18781, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-31 19:32:26, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"606424","loginId":"zdh_3@gmail.com","verifyCode":"Xigqb1zttbESMOz5f5KgZA==","origin":"","sign":"d511642677e84cca86b573d3f8504e17","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-31 19:32:28, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18780, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-31 19:20:04, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"479491","loginId":"zdh_3@gmail.com","verifyCode":"rJZYSb+EK4Os7/3BNt0xTQ==","origin":"","sign":"5011ee413a9f49bbaa8d6273d3dd9dfe","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-31 19:20:06, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18777, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-31 12:08:50, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"190187","loginId":"zdh_3@gmail.com","verifyCode":"FFz8LNrNY6FRGWop+KD46w==","origin":"","sign":"6bb93cd3bcea4957ab66fe09aa580d64","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-31 12:08:52, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18732, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-31 10:49:15, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"669525","loginId":"zdh_3@gmail.com","verifyCode":"N/GRaekA6/YwvUlyM462kA==","origin":"","sign":"910273c2576e48ebb90362e7fecaeca8","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-31 10:49:17, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18726, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-30 20:41:36, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"112773","loginId":"zdh_3@gmail.com","verifyCode":"leJ7qFTedSMzSjiphGp4bQ==","origin":"","sign":"56fecf9f7af9454fb9a9cf57c1aaf02a","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-30 20:41:39, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18707, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 20:28:01, biz_type=risk-execute-api, ip=, lang_id=en_US, params={"currentTime":"2023-08-23 12:28:01","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 20:28:03, sub_type=ResetLoginPassword, user_id=3350454, id=18213, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 20:27:53, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"049987","loginId":"zdh_3@gmail.com","verifyCode":"uebnes/ryql4bervlTRZsA==","origin":"","sign":"8ba33a9a33114e06b280adf08301b456","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-23 20:27:54, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18212, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 18:43:50, biz_type=risk-execute-api, ip=, lang_id=en_US, params={"currentTime":"2023-08-23 10:43:50","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 18:43:52, sub_type=ResetLoginPassword, user_id=3350454, id=18207, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 18:43:42, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"241531","loginId":"zdh_3@gmail.com","verifyCode":"OV5sqanx/GM5AEtVNs26wA==","origin":"","sign":"41a766af1c1e49248c5b14ecd9419eec","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-23 18:43:43, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18206, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 17:16:11, biz_type=risk-execute-api, ip=, lang_id=en_US, params={"currentTime":"2023-08-23 09:16:11","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 17:16:13, sub_type=ResetLoginPassword, user_id=3350454, id=18196, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 17:16:02, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"295633","loginId":"zdh_3@gmail.com","verifyCode":"yM9SCt2apjn6ej5H7xEtTA==","origin":"","sign":"3be3db9ef9c7443abd9eefbb0dfc3ce9","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-23 17:16:04, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18195, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 17:12:06, biz_type=risk-execute-api, ip=, lang_id=en_US, params={"currentTime":"2023-08-23 09:12:06","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 17:12:07, sub_type=ResetLoginPassword, user_id=3350454, id=18194, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 17:11:57, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"185356","loginId":"zdh_3@gmail.com","verifyCode":"+qe+hKYgotMEY/+Q/dPtdw==","origin":"","sign":"bbbd401f9cab4b45ac291e4c63a4eab3","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-23 17:11:59, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18193, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 17:03:57, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"354945","loginId":"zdh_3@gmail.com","verifyCode":"uLkRZLOnxk3jUMIVhEvc/w==","origin":"","sign":"b2e2b3d3ff2f4654887631f3ebfc9312","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-23 17:03:59, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18192, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 16:31:22, biz_type=risk-execute-api, ip=, lang_id=en_US, params={"currentTime":"2023-08-23 08:31:22","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 16:31:24, sub_type=ResetLoginPassword, user_id=3350454, id=18176, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 16:31:15, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"882719","loginId":"zdh_3@gmail.com","verifyCode":"SOFHy59NLeggvgS/9txQFQ==","origin":"","sign":"e6b0cf249a754883bd4367442ba94cd3","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-23 16:31:17, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18175, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 16:29:04, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"169127","loginId":"zdh_3@gmail.com","verifyCode":"ouUI1gINJsTHVmBMhgF5nw==","origin":"","sign":"d11011f22d5d4b31b1c5271f90c28fa2","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-23 16:29:05, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18174, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 15:48:37, biz_type=risk-execute-api, ip=, lang_id=en_US, params={"currentTime":"2023-08-23 07:48:37","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 15:48:38, sub_type=ResetLoginPassword, user_id=3350454, id=18172, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 15:48:07, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"482914","loginId":"zdh_3@gmail.com","verifyCode":"D/GnALgK+f/c7TUCB+kx+A==","origin":"","sign":"c82417751da94e8889505ac3f36c3490","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-23 15:48:09, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18171, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 15:46:50, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"680705","loginId":"zdh_3@gmail.com","verifyCode":"Y/kGGUe5Q1h99iPJNTaKYA==","origin":"","sign":"13071c4525fb41e39e950fc4a88ea2d5","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-23 15:46:52, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18170, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 15:20:46, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"923693","loginId":"zdh_3@gmail.com","verifyCode":"Rz3pSpHUgf6EnmgqRTwHcw==","origin":"","sign":"f61a4e91e7b9463884baa7c2a045550a","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-23 15:20:48, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18169, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 12:05:06, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"457024","loginId":"zdh_3@gmail.com","verifyCode":"Oj7CmeURzEpb6K0IN9YXlw==","origin":"","sign":"63415a4d1b0a41dca5a2dc1f83bca62d","expireMinute":"20","lang":"en_US","type":"31","brokerName":"Tapbit","userId":"3350454","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-23 12:05:08, sub_type=reset-loginpasswd-verify, user_id=3350454, id=18144, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 10:27:45, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"824515","loginId":"zdh_3@gmail.com","verifyCode":"t39wK3C890e8rtaqUfmrbA==","origin":"","sign":"ee72dfa5ec744edc8574531367d5d057","expireMinute":"20","lang":"en_US","type":"30","brokerName":"Tapbit","userId":"0","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-23 10:27:47, sub_type=register-verify, user_id=0, id=18130, state=1, email=zdh_3@gmail.com}, {email_type=1, create_time=2023-08-23 10:21:16, biz_type=spot, ip=, lang_id=zh_TW, params={"site":"MAIN","verifyCodeRaw":"396604","loginId":"zdh_3@gmail.com","verifyCode":"B3wP3wX7YM4nfzh6aivDsg==","origin":"","sign":"39a6f4e139234513a85ada58e85e8c77","expireMinute":"20","lang":"zh_TW","type":"30","brokerName":"Tapbit","userId":"0","email":"zdh_3@gmail.com"}, site=MAIN, update_time=2023-08-23 10:21:18, sub_type=register-verify, user_id=0, id=18129, state=1, email=zdh_3@gmail.com}]</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='29'>
+					<div class='test-heading'>
+						<span class='test-name'>phoneForgotPasswordTest</span>
+						<span class='test-time'>Sep 14, 2023 10:27:22 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:27:22 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:28:06 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 43s+685ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Update sql is: update user_base_info set passwd = '$2a$10$n6ch6l.tp04bJUITgHUl0.ItwduFV5pQb9yqCnzs2Z3lYCPwIdrqe' where phone = '15711491005' 执行更新操作成功！</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from nc_sms_queue where phone = '15711491005' order by create_time desc;</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{create_time=2023-09-14 22:27:45, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"885443","verifyCode":"QshOwDvu3j8857tOxk+4Lg==","phone":"15711491005","ip":"39.105.139.176","time":"1694701665928","expireMinute":"10","lang":"en_US","type":"49","brokerName":"Tapbit"}, site=MAIN, update_time=2023-09-14 22:27:45, sub_type=ResetLoginPasswdVerify, user_id=3350461, phone=15711491005, id=2617, state=2}, {create_time=2023-09-08 12:10:20, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"902019","verifyCode":"3FBH5y7vuMbkLNnG2Qo8PQ==","phone":"15711491005","ip":"39.105.139.176","time":"1694146220082","expireMinute":"10","lang":"en_US","type":"49","brokerName":"Tapbit"}, site=MAIN, update_time=2023-09-08 12:10:20, sub_type=ResetLoginPasswdVerify, user_id=3350461, phone=15711491005, id=2549, state=2}, {create_time=2023-08-31 20:10:53, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"970181","verifyCode":"FyuKJITBZc2NKvJ3DYqk2Q==","phone":"15711491005","ip":"39.105.139.176","time":"1693483853476","expireMinute":"10","lang":"en_US","type":"49","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-31 20:10:53, sub_type=ResetLoginPasswdVerify, user_id=3350461, phone=15711491005, id=2471, state=2}, {create_time=2023-08-31 19:20:39, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"387231","verifyCode":"RhBTLM10ZxUo7pZRu2CqCw==","phone":"15711491005","ip":"39.105.139.176","time":"1693480839504","expireMinute":"10","lang":"en_US","type":"49","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-31 19:20:39, sub_type=ResetLoginPasswdVerify, user_id=3350461, phone=15711491005, id=2461, state=2}, {create_time=2023-08-30 16:31:57, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"799269","verifyCode":"EqNvCC7KYeEKdoVUY3Ju8g==","phone":"15711491005","ip":"39.105.139.176","time":"1693384317268","expireMinute":"10","lang":"en_US","type":"49","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-30 16:31:57, sub_type=ResetLoginPasswdVerify, user_id=3350461, phone=15711491005, id=2431, state=2}, {create_time=2023-08-23 20:39:01, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"834971","verifyCode":"VrlgKIn5SvKDtemOrJ+16w==","phone":"15711491005","ip":"39.105.139.176","time":"1692794341257","expireMinute":"10","lang":"en_US","type":"49","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 20:39:01, sub_type=ResetLoginPasswdVerify, user_id=3350461, phone=15711491005, id=2385, state=2}, {create_time=2023-08-23 20:30:31, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"300833","verifyCode":"OAw8IUaQuKAfP7nyttTqLA==","phone":"15711491005","ip":"39.105.139.176","time":"1692793831947","expireMinute":"10","lang":"en_US","type":"49","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 20:30:32, sub_type=ResetLoginPasswdVerify, user_id=3350461, phone=15711491005, id=2383, state=2}, {create_time=2023-08-23 18:54:57, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"985564","verifyCode":"v26LeocgBxOOPOO9IHSU1A==","phone":"15711491005","ip":"39.105.139.176","time":"1692788097614","expireMinute":"10","lang":"en_US","type":"49","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 18:54:57, sub_type=ResetLoginPasswdVerify, user_id=3350461, phone=15711491005, id=2380, state=2}, {create_time=2023-08-23 18:44:29, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"118093","verifyCode":"IruGXuOuq2G9s94EoaD1rA==","phone":"15711491005","ip":"39.105.139.176","time":"1692787469878","expireMinute":"10","lang":"en_US","type":"49","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 18:44:29, sub_type=ResetLoginPasswdVerify, user_id=3350461, phone=15711491005, id=2378, state=2}, {create_time=2023-08-23 18:40:21, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"282487","verifyCode":"sBHw+8yCcwxtNsXU5T+f1g==","phone":"15711491005","ip":"39.105.139.176","time":"1692787221036","expireMinute":"10","lang":"en_US","type":"49","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 18:40:21, sub_type=ResetLoginPasswdVerify, user_id=3350461, phone=15711491005, id=2376, state=2}, {create_time=2023-08-23 18:38:34, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"501019","verifyCode":"8YoQxjZGE6yg0OiAwY9Wrw==","phone":"15711491005","ip":"39.105.139.176","time":"1692787113999","expireMinute":"10","lang":"en_US","type":"49","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 18:38:34, sub_type=ResetLoginPasswdVerify, user_id=3350461, phone=15711491005, id=2375, state=2}, {create_time=2023-08-23 18:35:07, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"441799","verifyCode":"fQBuVeB5pF6Mw76vJR9ADA==","phone":"15711491005","ip":"39.105.139.176","time":"1692786907632","expireMinute":"10","lang":"en_US","type":"49","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 18:35:07, sub_type=ResetLoginPasswdVerify, user_id=3350461, phone=15711491005, id=2374, state=2}, {create_time=2023-08-23 17:30:33, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"821409","verifyCode":"rfnyUo4zHLBPwF0oaKDTCg==","phone":"15711491005","ip":"39.105.139.176","time":"1692783033589","expireMinute":"10","lang":"en_US","type":"48","brokerName":"Tapbit"}, site=MAIN, update_time=2023-08-23 17:30:33, sub_type=RegisterVerify, user_id=0, phone=15711491005, id=2373, state=2}]</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='30'>
+					<div class='test-heading'>
+						<span class='test-name'>errEmailLogInTest</span>
+						<span class='test-time'>Sep 14, 2023 10:28:12 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:28:12 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:28:24 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 12s+286ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='31'>
+					<div class='test-heading'>
+						<span class='test-name'>phoneRegisterPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:29:11 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:29:11 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:31:15 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 4s+360ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Please select a country or regiontoast验证成功</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='32'>
+					<div class='test-heading'>
+						<span class='test-name'>emailRegisterPageTest</span>
+						<span class='test-time'>Sep 14, 2023 10:31:22 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:31:22 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:33:11 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 48s+503ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='33'>
+					<div class='test-heading'>
+						<span class='test-name'>emailRegisterTest</span>
+						<span class='test-time'>Sep 14, 2023 10:33:57 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:33:57 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:34:29 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 31s+975ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from user_base_info where email = 'zdh_1@gmail.com';</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{birthday=null, address=, login_verify_status=1, create_time=2023-09-14 18:15:25, area_code=null, sign=3db54e3e7fc0be7dfe1dac5611ec78e92188092aa5ae4c9da2bce9a2c1339469, security_level=0, update_time=2023-09-14 18:15:25, pin=null, passwd=$2a$10$2FAEOy0TbbZ2AH6cxZcD..TGrDmGa2BQZSJr28ZgPOtrHuTGuq7Ku, phone=null, google_device=null, id=3360137, verify_way=3, email=zdh_1@gmail.com}]</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Update sql is: delete from user_base_info where email = 'zdh_1@gmail.com'; 执行更新操作成功！</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Update sql is: delete from user_extend_info where user_id = '3360137'; 执行更新操作成功！</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Update sql is: delete from nc_email_queue where email = 'zdh_1@gmail.com'; 执行更新操作成功！</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from nc_email_queue where email = 'zdh_1@gmail.com' order by create_time desc;</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{email_type=1, create_time=2023-09-14 22:34:16, biz_type=spot, ip=, lang_id=en_US, params={"site":"MAIN","verifyCodeRaw":"155906","loginId":"zdh_1@gmail.com","verifyCode":"hvefNBWXvpKRk2VCs2c0Dw==","origin":"","sign":"0ab3acf18c9e4dbc9f19d4b4af433192","expireMinute":"20","lang":"en_US","type":"30","brokerName":"Tapbit","userId":"0","email":"zdh_1@gmail.com"}, site=MAIN, update_time=2023-09-14 22:34:18, sub_type=register-verify, user_id=0, id=19474, state=1, email=zdh_1@gmail.com}]</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='34'>
+					<div class='test-heading'>
+						<span class='test-name'>phoneRegisterTest</span>
+						<span class='test-time'>Sep 14, 2023 10:34:35 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:34:35 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:35:12 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 37s+717ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from user_base_info where phone = '15711491003';</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{birthday=null, address=, login_verify_status=1, create_time=2023-09-14 18:16:07, area_code=81, sign=c30389df5b3c550d8b9515ee41b54fc8117e3e88dc16ceb74d1cd3f762de32da, security_level=0, update_time=2023-09-14 18:16:07, pin=null, passwd=$2a$10$HbUFaodp/7p1VZXjmjFOr.OsVT.klskhvAkXD1NgBsHc5PaYzvcGm, phone=15711491003, google_device=null, id=3360138, verify_way=1, email=null}]</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Update sql is: delete from user_base_info where phone = '15711491003'; 执行更新操作成功！</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Update sql is: delete from user_extend_info where user_id = '3360138'; 执行更新操作成功！</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Update sql is: delete from nc_sms_queue where phone = '15711491003'; 执行更新操作成功！</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>执行的SQL为：select * from nc_sms_queue where phone = '15711491003' order by create_time desc;</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{create_time=2023-09-14 22:35:00, biz_type=spot, area_code=81, ip=39.105.139.176, lang_id=en_US, params={"areaCode":"81","site":"MAIN","verifyCodeRaw":"517030","verifyCode":"w0ql+I1CKr3+aJPEfd0b0g==","phone":"15711491003","ip":"39.105.139.176","time":"1694702100189","expireMinute":"10","lang":"en_US","type":"48","brokerName":"Tapbit"}, site=MAIN, update_time=2023-09-14 22:35:00, sub_type=RegisterVerify, user_id=0, phone=15711491003, id=2619, state=2}]</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='35'>
+					<div class='test-heading'>
+						<span class='test-name'>errEmailRegisterTest</span>
+						<span class='test-time'>Sep 14, 2023 10:35:16 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:35:16 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:35:42 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 25s+894ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Verification failedtoast验证成功</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='36'>
+					<div class='test-heading'>
+						<span class='test-name'>test</span>
+						<span class='test-time'>Sep 14, 2023 10:36:59 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Sep 14, 2023 10:36:59 PM</span>
+	<span class='label end-time'>Sep 14, 2023 10:37:09 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 10s+12ms</span>
+</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>10:37:13 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>java.lang.AssertionError</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>2</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Sep 14, 2023 10:00:53 PM</td>
+                                                        <td class='linked' test-id='1'>marketBuyTransactionTest</td>
+                                                        <td><pre><pre>java.lang.AssertionError: SpotTransactionTest_marketBuyTransactionTest_历史页面下单成交时间不对应！ expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at com.tapbit.test.spot.SpotTransactionStreamTest.marketBuyTransactionTest(SpotTransactionStreamTest.java:174)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Sep 14, 2023 10:22:52 PM</td>
+                                                        <td class='linked' test-id='2'>forgotPasswordPageTest</td>
+                                                        <td><pre><pre>java.lang.AssertionError: LogInPageTest_forgotPasswordPageTest_修改密码页面标题不正确！ expected [Two-Factor Verification] but found [Reset Password]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:136)
+	at org.testng.Assert.assertEquals(Assert.java:118)
+	at org.testng.Assert.assertEquals(Assert.java:575)
+	at com.tapbit.test.userCenter.LogInPageTest.forgotPasswordPageTest(LogInPageTest.java:1435)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.util.ArrayList.forEach(ArrayList.java:1249)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:72)
+	at org.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:123)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>36</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>36</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Sep 14, 2023 09:53:33 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Sep 14, 2023 10:37:13 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 43m 40s+508ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 34,
+				failParent: 2,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 2,
+				
+				passChild: 34,
+				failChild: 2,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				exceptionsChild: 217,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>
