@@ -1,0 +1,2361 @@
+
+<!DOCTYPE html>
+<html>
+
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>自动化测试报告</title>
+
+	<style type='text/css'>
+			.node.level-1  ul{ display:none;} .node.level-1.active ul{display:block;}
+	</style>
+</head>
+
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
+			<li class='waves-effect'><a href='#!' view='exception-view' onclick="configureView(2)"><i class='material-icons'>bug_report</i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>自动化测试报告</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>Dec 22, 2025 03:34:27 PM</span>
+				</a>
+			</li>
+			<li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>3.1.5</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='skip'><a href='#!'>Skip <i class='material-icons cyan-text'>redo</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>local_offer</i> Category
+				</a>
+				<ul id='category-toggle' class='dropdown-content'>
+					<li><a href='#'>Derivatives</a></li>
+					<li><a href='#'>Assets</a></li>
+					<li><a href='#'>Home</a></li>
+					<li><a href='#'>Spot</a></li>
+					<li class='divider'></li>
+					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
+				</ul>
+			</div>
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='86.364%'><span class='strong'>19</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='13.636%'>3</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='86.364%'><span class='strong'>19</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='13.636%'>3</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h5>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>limitAddTPSLTransactionTest</span>
+						<span class='test-time'>Dec 22, 2025 04:23:46 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 04:23:46 PM</span>
+	<span class='label end-time'>Dec 22, 2025 04:29:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 5m 28s+758ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Derivatives</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：100985.9653 > 10</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：89830.7 × 0.2 = 17966.14</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：89830.7 - 17966.14 = 71864.56</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：71864.5 + 1000 = 72864.5</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：71864.5 - 1000 = 70864.5</td>
+				</tr>
+				<tr class='log' status='skip'>
+					<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'><textarea>org.openqa.selenium.StaleElementReferenceException: Cached elements 'By.id: com.voox.plus.dev:id/inp_content' do not exist in DOM anymore
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.4', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [ede7fa34-fdb4-4c6a-9094-c7dbb0c4e7d8, sendKeysToElement {id=00000000-0000-08b0-ffff-ffff00000268, value=[Ljava.lang.CharSequence;@68fc636a}]
+Capabilities {appium:appActivity: com.explus.main.home.ui.X1S..., appium:appPackage: com.voox.plus.dev, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.explus.main.home.ui.X1S..., appPackage: com.voox.plus.dev, automationName: UIAutomator2, deviceName: RFCWC1DPLJY, newCommandTimeout: 1200, noReset: true, platformName: ANDROID, platformVersion: 8.0.0, recreateChromeDriverSessions: true, resetKeyboard: true, udid: RFCWC1DPLJY, unicodeKeyboard: true}, appium:deviceApiLevel: 36, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S9210, appium:deviceName: RFCWC1DPLJY, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: RFCWC1DPLJY, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 1200, appium:noReset: true, appium:pixelRatio: 3, appium:platformVersion: 16, appium:recreateChromeDriverSessions: true, appium:resetKeyboard: true, appium:statBarHeight: 91, appium:takesScreenshot: true, appium:udid: RFCWC1DPLJY, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2249, left: 0, top: 91, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Element: [[AndroidDriver:  on ANDROID (ede7fa34-fdb4-4c6a-9094-c7dbb0c4e7d8)] -> id: com.voox.plus.dev:id/inp_content]
+Session ID: ede7fa34-fdb4-4c6a-9094-c7dbb0c4e7d8
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:111)
+	at com.voox.test.derivatives.DerivativesTransactionStreamTest.limitAddTPSLTransactionTest(DerivativesTransactionStreamTest.java:991)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</textarea></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>chainWithdrawTest</span>
+						<span class='test-time'>Dec 22, 2025 04:43:13 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 04:43:13 PM</span>
+	<span class='label end-time'>Dec 22, 2025 04:43:22 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 9s+186ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Assets</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='skip'>
+					<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'><pre>java.lang.AssertionError: AssetsStreamTest_chainWithdrawTest_获取底部tab失败 expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at com.voox.test.assets.AssetsStreamTest.chainWithdrawTest(AssetsStreamTest.java:79)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</pre></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  skip' status='skip' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>chainWithdrawTest</span>
+						<span class='test-time'>Dec 22, 2025 04:43:29 PM</span>
+						<span class='test-status right skip'>skip</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 04:43:29 PM</span>
+	<span class='label end-time'>Dec 22, 2025 04:44:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 41s+219ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Assets</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>执行的SQL为：select * from t_notify_record  where target = 'ken_zdh_2@163.com' and notify_type = 'EMAIL' order by create_time DESC limit 1;</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{create_time=2025-12-22 11:32:11, batch_id=176637432710101168-1-1, read_status=0, click_status=0, message_id=0$ken_zdh_2@163.com, ext_info=null, proxy_name=smtp.larksuite.com, target=ken_zdh_2@163.com, template_code=null, notify_type=EMAIL, message_content=<div style="height: 50px;">&nbsp;</div>
+<div style="width: 540px; margin: 0 auto; box-shadow: 0px 7px 12.4px 0px #0000001f; overflow: hidden;">
+<div><a href="https://voox.com" target="_blank" rel="noopener"> <img style="max-width: 540px; display: block; width: 100%;" src="https://s3.ap-northeast-1.amazonaws.com/kooex-test1/20251128-180332.png"> </a></div>
+<div style="padding: 48px 32px;">
+<p><strong>Dear User,</strong></p>
+<div>&nbsp;</div>
+<p><strong>Your verification code is</strong></p>
+<div>&nbsp;</div>
+<span style="background-color: #ced4d9;"><strong>891132</strong></span><br>
+<div>&nbsp;</div>
+<p><strong>This code is for サイト内直接転送 and is valid for 5 minutes. Please do not disclose the code to anyone.</strong></p>
+</div>
+<div style="background: #f3f3f3; max-width: 540px; width: 100%;">
+<div style="height: 32px;">&nbsp;</div>
+<p style="font-size: 12px; color: #67686d; margin: 0 32px;">フィッシングサイトにご注意のうえ、必ず <a style="color: #F59505; text-decoration: underline;" href="https://voox.com" target="_blank" rel="noopener">voox.com</a> 公式サイトにアクセスしていることをご確認ください。</p>
+<p style="font-size: 12px; color: #67686d; margin: 0 32px;">ご不明な点がございましたら、<a style="color: #F59505; text-decoration: underline;" href="https://support.voox.com/hc/ja_JP/requests/new" target="_blank" rel="noopener">オンラインサポート</a>または<a style="color: #F59505;" href="mailto:support@voox.com" target="_blank" rel="noopener">公式メールアドレス</a>までお問い合わせください。</p>
+<div style="height: 24px;">&nbsp;</div>
+<div style="max-width: 476px; margin: 0 auto 24px; padding: 0 32px; clear: both;">
+<div style="float: left; margin: 0 32px 24px 0; font-size: 14px; font-weight: 500; color: #111219;">
+<div style="margin: 0 0 10px;">APPダウンロード</div>
+<div style="display: flex;"><a style="display: flex; align-items: center; padding: 10px 16px; gap: 8px; background: #000000; border-radius: 8px; margin: 0 8px 0 0; text-decoration: none; color: #fff;" href="https://www.voox.com/el_GR/appDownload" target="_blank" rel="noopener"><span style="display: flex; width: 24px; height: 24px; overflow: hidden;"> <img style="width: 24px; height: 24px; display: block;" src="https://s3.ap-northeast-1.amazonaws.com/voox-prod/1741587783720_ios6422463310350331616.png"> </span>
+<p style="margin: 0; line-height: 12px;"><span style="font-family: 'HarmonyOS Sans SC'; font-style: normal; font-weight: 500; font-size: 12px; line-height: 9px; color: #ffffff; white-space: nowrap;">Download on</span> <strong style="font-family: 'HarmonyOS Sans SC'; font-style: normal; font-weight: 500; font-size: 14px; line-height: 14px; color: #ffffff; white-space: nowrap; display: block;">App Store</strong></p>
+</a><a style="display: flex; align-items: center; padding: 10px 16px; gap: 8px; background: #000000; border-radius: 8px; text-decoration: none; color: #fff;" href="https://www.voox.com/el_GR/appDownload" target="_blank" rel="noopener"><span style="display: flex; width: 24px; height: 24px; overflow: hidden;"> <img style="width: 24px; height: 24px; display: block;" src="https://s3.ap-northeast-1.amazonaws.com/voox-prod/1741587771731_googleplay5139384179189491687.png"> </span>
+<p style="margin: 0; line-height: 12px;"><span style="font-family: 'HarmonyOS Sans SC'; font-style: normal; font-weight: 500; font-size: 12px; line-height: 9px; color: #ffffff; white-space: nowrap;">GET IT ON</span> <strong style="font-family: 'HarmonyOS Sans SC'; font-style: normal; font-weight: 500; font-size: 14px; line-height: 14px; color: #ffffff; white-space: nowrap; display: block;">Google Play</strong></p>
+</a></div>
+</div>
+<div style="float: left; font-size: 14px; font-weight: 500; color: #111219;">
+<div style="margin: 0 0 10px;">コミュニティ・SNS</div>
+<div style="display: flex;"><a style="width: 18px; height: 18px; display: flex; margin: 0 16px 0 0;" href="https://x.com/VOOX_ZH" target="_blank" rel="noopener"> <img style="width: 18px; height: 18px; display: block;" src="https://s3.ap-northeast-1.amazonaws.com/voox-prod/1741587803256_x3242887802553360825.png"> </a> <a style="width: 18px; height: 18px; display: flex;" href="https://t.me/VOOXChinese" target="_blank" rel="noopener"> <img style="width: 18px; height: 18px; display: block;" src="https://s3.ap-northeast-1.amazonaws.com/voox-prod/1741587794496_tg4519510831174262810.png"> </a></div>
+</div>
+</div>
+<p style="color: #67686d; font-size: 12px; line-height: 21px; text-align: center; width: 100%; clear: both; margin: 24px 0 0;">&copy; 2025 voox.com, All Rights Reserved.</p>
+<p style="color: #67686d; font-size: 12px; line-height: 21px; text-align: center; margin: 0 0 0;">こちらはシステムから自動送信されたメッセージです。返信はご遠慮ください。</p>
+<div style="height: 32px;">&nbsp;</div>
+</div>
+</div>, update_time=2025-12-22 11:32:11, send_time=2025-12-22 11:32:11, read_time=null, user_id=null, send_msg=null, click_time=null, response=250 2.0.0 OK: queued
+, id=2245, lang=null, status=0}]</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>toast查找失败サイト内直接振替成功</td>
+				</tr>
+				<tr class='log' status='skip'>
+					<td class='status skip' title='skip' alt='skip'><i class='material-icons'>redo</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'><pre>java.lang.AssertionError: toast查找失败サイト内直接振替成功
+	at com.voox.util.Utils.checkToast(Utils.java:137)
+	at com.voox.test.assets.AssetsStreamTest.chainWithdrawTest(AssetsStreamTest.java:116)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</pre></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>searchTest</span>
+						<span class='test-time'>Dec 22, 2025 03:34:27 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 03:34:27 PM</span>
+	<span class='label end-time'>Dec 22, 2025 03:36:53 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 26s+235ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Home</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>customerTest</span>
+						<span class='test-time'>Dec 22, 2025 03:36:58 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 03:36:58 PM</span>
+	<span class='label end-time'>Dec 22, 2025 03:37:28 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 29s+325ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Home</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>未获取到元素home_customer_zuia_message_text，重试中</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>未获取到元素home_customer_zuia_message_text，重试中</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>未获取到元素home_customer_zuia_message_text，重试中</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>notificationsTest</span>
+						<span class='test-time'>Dec 22, 2025 03:37:33 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 03:37:33 PM</span>
+	<span class='label end-time'>Dec 22, 2025 03:37:37 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+659ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Home</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>LimitBuyTransactionTest</span>
+						<span class='test-time'>Dec 22, 2025 03:37:46 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 03:37:46 PM</span>
+	<span class='label end-time'>Dec 22, 2025 03:38:46 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 0s+92ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Spot</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>执行的SQL为：select * from membership_level_fee_config where level_id = 1;</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{level_name=普通用户, withdraw_amount=10000.0000000000000000, lever_discount_rate=20.0000000000000000, level_id=1, spot_maker_fee=0.0100000000000000, futures_maker_fee=null, futures_taker_fee=null, ctime=2024-06-25 20:19:24, id=1, mtime=2024-08-13 14:44:20, spot_taker_fee=0.0100000000000000, status=0}]</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：70000 × 0.1 = 7000.0</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：7000.0 = 7000.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：762751.913302 - 7000.0 = 755751.913302</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：755751.913302 = 755751.913302</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：0.1 = 0.1000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：70000 = 70000.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：0.1 = 0.1000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：70000 = 70000.00</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>marketBuyTransactionTest</span>
+						<span class='test-time'>Dec 22, 2025 03:38:52 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 03:38:52 PM</span>
+	<span class='label end-time'>Dec 22, 2025 03:40:05 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 12s+724ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Spot</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：0.0001 = 0.0001</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：762741.913655 + 9.99964749 = 762751.91330249</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：0.0001 - 1.5E-7 = 0.00009985</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：1.49874995 + 0.00009985 = 1.49884980</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：762741.913655 + 9.99964749 = 762751.91330249</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：762751.91 = 762751.91</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：0.0001 - 1.5E-7 = 0.00009985</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：1.49874995 + 0.00009985 = 1.49884980</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：1.4988 = 1.4988</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>limitSellTransactionTest</span>
+						<span class='test-time'>Dec 22, 2025 03:40:11 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 03:40:11 PM</span>
+	<span class='label end-time'>Dec 22, 2025 03:41:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 3s+475ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Spot</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>执行的SQL为：select * from membership_level_fee_config where level_id = 1;</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{level_name=普通用户, withdraw_amount=10000.0000000000000000, lever_discount_rate=20.0000000000000000, level_id=1, spot_maker_fee=0.0100000000000000, futures_maker_fee=null, futures_taker_fee=null, ctime=2024-06-25 20:19:24, id=1, mtime=2024-08-13 14:44:20, spot_taker_fee=0.0100000000000000, status=0}]</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：100000 × 0.1 = 10000.0</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：10000.0 = 10000.0000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：1.49886008 - 0.1 = 1.39886008</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：1.39886008 = 1.39886008</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：0.1 = 0.1000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：100000 = 100000.00</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：0.1 = 0.1000</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：100000 = 100000.00</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>marketSellTransactionTest</span>
+						<span class='test-time'>Dec 22, 2025 03:41:20 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 03:41:20 PM</span>
+	<span class='label end-time'>Dec 22, 2025 03:42:51 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 30s+841ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Spot</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：0.001 = 0.0010</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：0.001 = 0.0010</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：1.49786008 + 0.001 = 1.49886008</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：1.4988 = 1.4988</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：90.68328000 - 0.11788827 = 90.56539173</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：762741.913655 + 90.56539173 = 762832.47904673</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：762832.47 = 762832.47</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>limitTransactionTest</span>
+						<span class='test-time'>Dec 22, 2025 03:43:00 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 03:43:00 PM</span>
+	<span class='label end-time'>Dec 22, 2025 03:49:11 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 6m 10s+617ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Derivatives</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：100982.6576 > 10</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>未获取到元素derivatives_leverage_edit_text，重试中</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>未获取到元素derivatives_leverage_edit_text，重试中</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：89052.0 × 0.2 = 17810.40</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：89052.0 - 17810.40 = 71241.60</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：71241.6 = 71241.6</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：71241.6 = 71241.6</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>marketTransactionTest</span>
+						<span class='test-time'>Dec 22, 2025 03:49:16 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 03:49:16 PM</span>
+	<span class='label end-time'>Dec 22, 2025 03:54:18 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 5m 1s+417ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Derivatives</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：100982.6016 > 10</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：10 = 10</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>triggerTransactionTest</span>
+						<span class='test-time'>Dec 22, 2025 03:54:24 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 03:54:24 PM</span>
+	<span class='label end-time'>Dec 22, 2025 04:01:54 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 7m 30s+842ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Derivatives</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：100982.463 > 10</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：89122.0 × 0.2 = 17824.40</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：89122.0 - 17824.40 = 71297.60</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：71297.6 = 71297.6</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>postOnlyTransactionTest</span>
+						<span class='test-time'>Dec 22, 2025 04:02:03 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 04:02:03 PM</span>
+	<span class='label end-time'>Dec 22, 2025 04:10:11 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 8m 7s+595ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Derivatives</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：100982.463 > 10</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：89177.1 × 0.2 = 17835.42</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：89177.1 - 17835.42 = 71341.68</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：71341.6 = 71341.6</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：71341.6 = 71341.6</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>iocTransactionTest</span>
+						<span class='test-time'>Dec 22, 2025 04:10:17 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 04:10:17 PM</span>
+	<span class='label end-time'>Dec 22, 2025 04:17:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 7m 0s+265ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Derivatives</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：100982.463 > 10</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：89199.8 × 0.2 = 17839.96</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：89199.8 - 17839.96 = 71359.84</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='16'>
+					<div class='test-heading'>
+						<span class='test-name'>fokTransactionTest</span>
+						<span class='test-time'>Dec 22, 2025 04:17:25 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 04:17:25 PM</span>
+	<span class='label end-time'>Dec 22, 2025 04:23:40 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 6m 15s+463ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Derivatives</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：100985.9653 > 10</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：89757.5 × 0.2 = 17951.50</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：89757.5 - 17951.50 = 71806.00</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>limitAddTPSLTransactionTest</span>
+						<span class='test-time'>Dec 22, 2025 04:29:21 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 04:29:21 PM</span>
+	<span class='label end-time'>Dec 22, 2025 04:35:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 5m 55s+433ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Derivatives</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：100985.9653 > 10</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：89731.5 × 0.2 = 17946.30</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：89731.5 - 17946.30 = 71785.20</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：71785.2 + 1000 = 72785.2</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：71785.2 - 1000 = 70785.2</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：71785.2 + 1000 = 72785.2</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：71785.2 - 1000 = 70785.2</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：71785.2 = 71785.2</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：71785.2 + 1000 = 72785.2</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：71785.2 - 1000 = 70785.2</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：71785.2 = 71785.2</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：71785.2 + 1000 = 72785.2</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：71785.2 - 1000 = 70785.2</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>limitBBOTransactionTest</span>
+						<span class='test-time'>Dec 22, 2025 04:35:22 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 04:35:22 PM</span>
+	<span class='label end-time'>Dec 22, 2025 04:42:38 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 7m 15s+481ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Derivatives</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：100985.9653 > 20</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：20 = 20</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：0.345 = 0.3450</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：0.345 = 0.3450</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>depositTest</span>
+						<span class='test-time'>Dec 22, 2025 04:42:48 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 04:42:48 PM</span>
+	<span class='label end-time'>Dec 22, 2025 04:43:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 18s+150ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Assets</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>未获取到元素asset_spot_deposit_tv_coin，重试中</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>未获取到元素asset_spot_deposit_tv_coin，重试中</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='20'>
+					<div class='test-heading'>
+						<span class='test-name'>chainWithdrawTest</span>
+						<span class='test-time'>Dec 22, 2025 04:44:17 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 04:44:17 PM</span>
+	<span class='label end-time'>Dec 22, 2025 04:44:52 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 35s+531ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Assets</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>执行的SQL为：select * from t_notify_record  where target = 'ken_zdh_2@163.com' and notify_type = 'EMAIL' order by create_time DESC limit 1;</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{create_time=2025-12-22 16:44:01, batch_id=176639303710109220-1-1, read_status=0, click_status=0, message_id=0$ken_zdh_2@163.com, ext_info=null, proxy_name=smtp.larksuite.com, target=ken_zdh_2@163.com, template_code=null, notify_type=EMAIL, message_content=<div style="height: 50px;">&nbsp;</div>
+<div style="width: 540px; margin: 0 auto; box-shadow: 0px 7px 12.4px 0px #0000001f; overflow: hidden;">
+<div><a href="https://voox.com" target="_blank" rel="noopener"> <img style="max-width: 540px; display: block; width: 100%;" src="https://s3.ap-northeast-1.amazonaws.com/kooex-test1/20251128-180332.png"> </a></div>
+<div style="padding: 48px 32px;">
+<p><strong>Dear User,</strong></p>
+<div>&nbsp;</div>
+<p><strong>Your verification code is</strong></p>
+<div>&nbsp;</div>
+<span style="background-color: #ced4d9;"><strong>249590</strong></span><br>
+<div>&nbsp;</div>
+<p><strong>This code is for サイト内直接転送 and is valid for 5 minutes. Please do not disclose the code to anyone.</strong></p>
+</div>
+<div style="background: #f3f3f3; max-width: 540px; width: 100%;">
+<div style="height: 32px;">&nbsp;</div>
+<p style="font-size: 12px; color: #67686d; margin: 0 32px;">フィッシングサイトにご注意のうえ、必ず <a style="color: #F59505; text-decoration: underline;" href="https://voox.com" target="_blank" rel="noopener">voox.com</a> 公式サイトにアクセスしていることをご確認ください。</p>
+<p style="font-size: 12px; color: #67686d; margin: 0 32px;">ご不明な点がございましたら、<a style="color: #F59505; text-decoration: underline;" href="https://support.voox.com/hc/ja_JP/requests/new" target="_blank" rel="noopener">オンラインサポート</a>または<a style="color: #F59505;" href="mailto:support@voox.com" target="_blank" rel="noopener">公式メールアドレス</a>までお問い合わせください。</p>
+<div style="height: 24px;">&nbsp;</div>
+<div style="max-width: 476px; margin: 0 auto 24px; padding: 0 32px; clear: both;">
+<div style="float: left; margin: 0 32px 24px 0; font-size: 14px; font-weight: 500; color: #111219;">
+<div style="margin: 0 0 10px;">APPダウンロード</div>
+<div style="display: flex;"><a style="display: flex; align-items: center; padding: 10px 16px; gap: 8px; background: #000000; border-radius: 8px; margin: 0 8px 0 0; text-decoration: none; color: #fff;" href="https://www.voox.com/el_GR/appDownload" target="_blank" rel="noopener"><span style="display: flex; width: 24px; height: 24px; overflow: hidden;"> <img style="width: 24px; height: 24px; display: block;" src="https://s3.ap-northeast-1.amazonaws.com/voox-prod/1741587783720_ios6422463310350331616.png"> </span>
+<p style="margin: 0; line-height: 12px;"><span style="font-family: 'HarmonyOS Sans SC'; font-style: normal; font-weight: 500; font-size: 12px; line-height: 9px; color: #ffffff; white-space: nowrap;">Download on</span> <strong style="font-family: 'HarmonyOS Sans SC'; font-style: normal; font-weight: 500; font-size: 14px; line-height: 14px; color: #ffffff; white-space: nowrap; display: block;">App Store</strong></p>
+</a><a style="display: flex; align-items: center; padding: 10px 16px; gap: 8px; background: #000000; border-radius: 8px; text-decoration: none; color: #fff;" href="https://www.voox.com/el_GR/appDownload" target="_blank" rel="noopener"><span style="display: flex; width: 24px; height: 24px; overflow: hidden;"> <img style="width: 24px; height: 24px; display: block;" src="https://s3.ap-northeast-1.amazonaws.com/voox-prod/1741587771731_googleplay5139384179189491687.png"> </span>
+<p style="margin: 0; line-height: 12px;"><span style="font-family: 'HarmonyOS Sans SC'; font-style: normal; font-weight: 500; font-size: 12px; line-height: 9px; color: #ffffff; white-space: nowrap;">GET IT ON</span> <strong style="font-family: 'HarmonyOS Sans SC'; font-style: normal; font-weight: 500; font-size: 14px; line-height: 14px; color: #ffffff; white-space: nowrap; display: block;">Google Play</strong></p>
+</a></div>
+</div>
+<div style="float: left; font-size: 14px; font-weight: 500; color: #111219;">
+<div style="margin: 0 0 10px;">コミュニティ・SNS</div>
+<div style="display: flex;"><a style="width: 18px; height: 18px; display: flex; margin: 0 16px 0 0;" href="https://x.com/VOOX_ZH" target="_blank" rel="noopener"> <img style="width: 18px; height: 18px; display: block;" src="https://s3.ap-northeast-1.amazonaws.com/voox-prod/1741587803256_x3242887802553360825.png"> </a> <a style="width: 18px; height: 18px; display: flex;" href="https://t.me/VOOXChinese" target="_blank" rel="noopener"> <img style="width: 18px; height: 18px; display: block;" src="https://s3.ap-northeast-1.amazonaws.com/voox-prod/1741587794496_tg4519510831174262810.png"> </a></div>
+</div>
+</div>
+<p style="color: #67686d; font-size: 12px; line-height: 21px; text-align: center; width: 100%; clear: both; margin: 24px 0 0;">&copy; 2025 voox.com, All Rights Reserved.</p>
+<p style="color: #67686d; font-size: 12px; line-height: 21px; text-align: center; margin: 0 0 0;">こちらはシステムから自動送信されたメッセージです。返信はご遠慮ください。</p>
+<div style="height: 32px;">&nbsp;</div>
+</div>
+</div>, update_time=2025-12-22 16:44:01, send_time=2025-12-22 16:44:01, read_time=null, user_id=null, send_msg=null, click_time=null, response=250 2.0.0 OK: queued
+, id=2246, lang=null, status=0}]</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>サイト内直接振替成功toast验证成功</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>internalWithdrawTest</span>
+						<span class='test-time'>Dec 22, 2025 04:44:59 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 04:44:59 PM</span>
+	<span class='label end-time'>Dec 22, 2025 04:46:29 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 1m 30s+312ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Assets</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>执行的SQL为：select * from t_notify_record  where target = 'ken_zdh_2@163.com' and notify_type = 'EMAIL' order by create_time DESC limit 1;</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>查询库返回的结果为：[{create_time=2025-12-22 16:46:15, batch_id=176639317210101072-1-1, read_status=0, click_status=0, message_id=0$ken_zdh_2@163.com, ext_info=null, proxy_name=smtp.larksuite.com, target=ken_zdh_2@163.com, template_code=null, notify_type=EMAIL, message_content=<div style="height: 50px;">&nbsp;</div>
+<div style="width: 540px; margin: 0 auto; box-shadow: 0px 7px 12.4px 0px #0000001f; overflow: hidden;">
+<div><a href="https://voox.com" target="_blank" rel="noopener"> <img style="max-width: 540px; display: block; width: 100%;" src="https://s3.ap-northeast-1.amazonaws.com/kooex-test1/20251128-180332.png"> </a></div>
+<div style="padding: 48px 32px;">
+<p><strong>Dear User,</strong></p>
+<div>&nbsp;</div>
+<p><strong>Your verification code is</strong></p>
+<div>&nbsp;</div>
+<span style="background-color: #ced4d9;"><strong>583917</strong></span><br>
+<div>&nbsp;</div>
+<p><strong>This code is for サイト内直接転送 and is valid for 5 minutes. Please do not disclose the code to anyone.</strong></p>
+</div>
+<div style="background: #f3f3f3; max-width: 540px; width: 100%;">
+<div style="height: 32px;">&nbsp;</div>
+<p style="font-size: 12px; color: #67686d; margin: 0 32px;">フィッシングサイトにご注意のうえ、必ず <a style="color: #F59505; text-decoration: underline;" href="https://voox.com" target="_blank" rel="noopener">voox.com</a> 公式サイトにアクセスしていることをご確認ください。</p>
+<p style="font-size: 12px; color: #67686d; margin: 0 32px;">ご不明な点がございましたら、<a style="color: #F59505; text-decoration: underline;" href="https://support.voox.com/hc/ja_JP/requests/new" target="_blank" rel="noopener">オンラインサポート</a>または<a style="color: #F59505;" href="mailto:support@voox.com" target="_blank" rel="noopener">公式メールアドレス</a>までお問い合わせください。</p>
+<div style="height: 24px;">&nbsp;</div>
+<div style="max-width: 476px; margin: 0 auto 24px; padding: 0 32px; clear: both;">
+<div style="float: left; margin: 0 32px 24px 0; font-size: 14px; font-weight: 500; color: #111219;">
+<div style="margin: 0 0 10px;">APPダウンロード</div>
+<div style="display: flex;"><a style="display: flex; align-items: center; padding: 10px 16px; gap: 8px; background: #000000; border-radius: 8px; margin: 0 8px 0 0; text-decoration: none; color: #fff;" href="https://www.voox.com/el_GR/appDownload" target="_blank" rel="noopener"><span style="display: flex; width: 24px; height: 24px; overflow: hidden;"> <img style="width: 24px; height: 24px; display: block;" src="https://s3.ap-northeast-1.amazonaws.com/voox-prod/1741587783720_ios6422463310350331616.png"> </span>
+<p style="margin: 0; line-height: 12px;"><span style="font-family: 'HarmonyOS Sans SC'; font-style: normal; font-weight: 500; font-size: 12px; line-height: 9px; color: #ffffff; white-space: nowrap;">Download on</span> <strong style="font-family: 'HarmonyOS Sans SC'; font-style: normal; font-weight: 500; font-size: 14px; line-height: 14px; color: #ffffff; white-space: nowrap; display: block;">App Store</strong></p>
+</a><a style="display: flex; align-items: center; padding: 10px 16px; gap: 8px; background: #000000; border-radius: 8px; text-decoration: none; color: #fff;" href="https://www.voox.com/el_GR/appDownload" target="_blank" rel="noopener"><span style="display: flex; width: 24px; height: 24px; overflow: hidden;"> <img style="width: 24px; height: 24px; display: block;" src="https://s3.ap-northeast-1.amazonaws.com/voox-prod/1741587771731_googleplay5139384179189491687.png"> </span>
+<p style="margin: 0; line-height: 12px;"><span style="font-family: 'HarmonyOS Sans SC'; font-style: normal; font-weight: 500; font-size: 12px; line-height: 9px; color: #ffffff; white-space: nowrap;">GET IT ON</span> <strong style="font-family: 'HarmonyOS Sans SC'; font-style: normal; font-weight: 500; font-size: 14px; line-height: 14px; color: #ffffff; white-space: nowrap; display: block;">Google Play</strong></p>
+</a></div>
+</div>
+<div style="float: left; font-size: 14px; font-weight: 500; color: #111219;">
+<div style="margin: 0 0 10px;">コミュニティ・SNS</div>
+<div style="display: flex;"><a style="width: 18px; height: 18px; display: flex; margin: 0 16px 0 0;" href="https://x.com/VOOX_ZH" target="_blank" rel="noopener"> <img style="width: 18px; height: 18px; display: block;" src="https://s3.ap-northeast-1.amazonaws.com/voox-prod/1741587803256_x3242887802553360825.png"> </a> <a style="width: 18px; height: 18px; display: flex;" href="https://t.me/VOOXChinese" target="_blank" rel="noopener"> <img style="width: 18px; height: 18px; display: block;" src="https://s3.ap-northeast-1.amazonaws.com/voox-prod/1741587794496_tg4519510831174262810.png"> </a></div>
+</div>
+</div>
+<p style="color: #67686d; font-size: 12px; line-height: 21px; text-align: center; width: 100%; clear: both; margin: 24px 0 0;">&copy; 2025 voox.com, All Rights Reserved.</p>
+<p style="color: #67686d; font-size: 12px; line-height: 21px; text-align: center; margin: 0 0 0;">こちらはシステムから自動送信されたメッセージです。返信はご遠慮ください。</p>
+<div style="height: 32px;">&nbsp;</div>
+</div>
+</div>, update_time=2025-12-22 16:46:15, send_time=2025-12-22 16:46:15, read_time=null, user_id=null, send_msg=null, click_time=null, response=250 2.0.0 OK: queued
+, id=2247, lang=null, status=0}]</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>サイト内直接振替成功toast验证成功</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='22'>
+					<div class='test-heading'>
+						<span class='test-name'>transferTest</span>
+						<span class='test-time'>Dec 22, 2025 04:46:35 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 22, 2025 04:46:35 PM</span>
+	<span class='label end-time'>Dec 22, 2025 04:46:55 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+714ms</span>
+</div>
+	<div class='test-attributes'>
+			<div class='category-list'>
+				<span class='category label white-text'>Assets</span>
+			</div>
+	</div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：762802.479047 + 10 = 762812.479047</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：762812.479047 = 762812.479047</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>算式：100985.965300 + 10 = 100995.965300</td>
+				</tr>
+				<tr class='log' status='debug'>
+					<td class='status debug' title='debug' alt='debug'><i class='material-icons'>low_priority</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>比较：100995.965300 = 100995.965300</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:46:58 PM</td>
+					<td class='step-details'>Test passed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view -->
+<div id='category-view' class='view hide'>
+
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+				
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Categories</h3>
+			<ul id='category-collection' class='category-collection'>
+				
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Derivatives</span>
+						<span class='category-status right'>
+							<span class='label pass'>8</span>
+							<span class='label others'>1</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 8</span>
+							
+							<span class='label yellow darken-2 white-text'>Others: 1</span>
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 22, 2025 04:23:46 PM</td>
+										<td class='linked' test-id='1'>limitAddTPSLTransactionTest</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 03:43:00 PM</td>
+										<td class='linked' test-id='11'>limitTransactionTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 03:49:16 PM</td>
+										<td class='linked' test-id='12'>marketTransactionTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 03:54:24 PM</td>
+										<td class='linked' test-id='13'>triggerTransactionTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 04:02:03 PM</td>
+										<td class='linked' test-id='14'>postOnlyTransactionTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 04:10:17 PM</td>
+										<td class='linked' test-id='15'>iocTransactionTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 04:17:25 PM</td>
+										<td class='linked' test-id='16'>fokTransactionTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 04:29:21 PM</td>
+										<td class='linked' test-id='17'>limitAddTPSLTransactionTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 04:35:22 PM</td>
+										<td class='linked' test-id='18'>limitBBOTransactionTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Assets</span>
+						<span class='category-status right'>
+							<span class='label pass'>4</span>
+							<span class='label others'>2</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 4</span>
+							
+							<span class='label yellow darken-2 white-text'>Others: 2</span>
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 22, 2025 04:43:13 PM</td>
+										<td class='linked' test-id='2'>chainWithdrawTest</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 04:43:29 PM</td>
+										<td class='linked' test-id='3'>chainWithdrawTest</td>
+										<td><span class='test-status skip'>skip</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 04:42:48 PM</td>
+										<td class='linked' test-id='19'>depositTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 04:44:17 PM</td>
+										<td class='linked' test-id='20'>chainWithdrawTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 04:44:59 PM</td>
+										<td class='linked' test-id='21'>internalWithdrawTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 04:46:35 PM</td>
+										<td class='linked' test-id='22'>transferTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Home</span>
+						<span class='category-status right'>
+							<span class='label pass'>3</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 3</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 22, 2025 03:34:27 PM</td>
+										<td class='linked' test-id='4'>searchTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 03:36:58 PM</td>
+										<td class='linked' test-id='5'>customerTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 03:37:33 PM</td>
+										<td class='linked' test-id='6'>notificationsTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+				<li class='category displayed active'>
+					<div class='category-heading'>
+						<span class='category-name'>Spot</span>
+						<span class='category-status right'>
+							<span class='label pass'>4</span>
+						</span>
+					</div>
+					<div class='category-content hide'>
+						<div class='category-status-counts'>
+							<span class='label green accent-4 white-text'>Passed: 4</span>
+							
+							
+						</div>
+					
+						<div class='category-tests'>
+							<table class='bordered table-results'>
+								<thead>
+									<tr>
+										<th>Timestamp</th>
+										<th>TestName</th>
+										<th>Status</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Dec 22, 2025 03:37:46 PM</td>
+										<td class='linked' test-id='7'>LimitBuyTransactionTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 03:38:52 PM</td>
+										<td class='linked' test-id='8'>marketBuyTransactionTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 03:40:11 PM</td>
+										<td class='linked' test-id='9'>limitSellTransactionTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Dec 22, 2025 03:41:20 PM</td>
+										<td class='linked' test-id='10'>marketSellTransactionTest</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</li>
+
+			</ul>
+		</div>
+	</div>
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='category-name'></h5>
+		</div>
+	</div>
+</div>
+<!-- category view -->
+<div id='exception-view' class='view hide'>
+
+    <section id='controls'>
+        <div class='controls grey lighten-4'>
+            <!-- search -->
+            <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                <a href="#" class='search-div'>
+                    <i class='material-icons'>search</i> Search
+                </a>
+
+                <div class='input-field left hide'>
+                    <input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                </div>
+
+            </div>
+            <!-- search -->
+        </div>
+    </section>
+
+    <div class='subview-left left'>
+
+        <div class='view-summary'>
+            <h5>Exceptions</h3>
+                <ul id='exception-collection' class='exception-collection'>
+
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>org.openqa.selenium.StaleElementReferenceException</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>1</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Dec 22, 2025 04:23:46 PM</td>
+                                                        <td class='linked' test-id='1'>limitAddTPSLTransactionTest</td>
+                                                        <td><pre><textarea>org.openqa.selenium.StaleElementReferenceException: Cached elements 'By.id: com.voox.plus.dev:id/inp_content' do not exist in DOM anymore
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.13.0', revision: 'ba948ece5b*'
+System info: os.name: 'Mac OS X', os.arch: 'x86_64', os.version: '13.4', java.version: '20.0.1'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [ede7fa34-fdb4-4c6a-9094-c7dbb0c4e7d8, sendKeysToElement {id=00000000-0000-08b0-ffff-ffff00000268, value=[Ljava.lang.CharSequence;@68fc636a}]
+Capabilities {appium:appActivity: com.explus.main.home.ui.X1S..., appium:appPackage: com.voox.plus.dev, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {appActivity: com.explus.main.home.ui.X1S..., appPackage: com.voox.plus.dev, automationName: UIAutomator2, deviceName: RFCWC1DPLJY, newCommandTimeout: 1200, noReset: true, platformName: ANDROID, platformVersion: 8.0.0, recreateChromeDriverSessions: true, resetKeyboard: true, udid: RFCWC1DPLJY, unicodeKeyboard: true}, appium:deviceApiLevel: 36, appium:deviceManufacturer: samsung, appium:deviceModel: SM-S9210, appium:deviceName: RFCWC1DPLJY, appium:deviceScreenDensity: 480, appium:deviceScreenSize: 1080x2340, appium:deviceUDID: RFCWC1DPLJY, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:newCommandTimeout: 1200, appium:noReset: true, appium:pixelRatio: 3, appium:platformVersion: 16, appium:recreateChromeDriverSessions: true, appium:resetKeyboard: true, appium:statBarHeight: 91, appium:takesScreenshot: true, appium:udid: RFCWC1DPLJY, appium:unicodeKeyboard: true, appium:viewportRect: {height: 2249, left: 0, top: 91, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Element: [[AndroidDriver:  on ANDROID (ede7fa34-fdb4-4c6a-9094-c7dbb0c4e7d8)] -> id: com.voox.plus.dev:id/inp_content]
+Session ID: ede7fa34-fdb4-4c6a-9094-c7dbb0c4e7d8
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:67)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:484)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:52)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:250)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:602)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
+	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:111)
+	at com.voox.test.derivatives.DerivativesTransactionStreamTest.limitAddTPSLTransactionTest(DerivativesTransactionStreamTest.java:991)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</textarea></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                        <li class='exception displayed active'>
+                            <div class='exception-heading'>
+                                <span class='exception-name'>java.lang.AssertionError</span>
+                                <span class='exception-count right'><span class='label red lighten-1 white-text'>2</span></span>
+                            </div>
+                            <div class='exception-content hide'>
+                                <div class='exception-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                    <tr>
+                                                        <td>Dec 22, 2025 04:43:13 PM</td>
+                                                        <td class='linked' test-id='2'>chainWithdrawTest</td>
+                                                        <td><pre><pre>java.lang.AssertionError: AssetsStreamTest_chainWithdrawTest_获取底部tab失败 expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:97)
+	at org.testng.Assert.failNotEquals(Assert.java:969)
+	at org.testng.Assert.assertTrue(Assert.java:43)
+	at com.voox.test.assets.AssetsStreamTest.chainWithdrawTest(AssetsStreamTest.java:79)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</pre></pre></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Dec 22, 2025 04:43:29 PM</td>
+                                                        <td class='linked' test-id='3'>chainWithdrawTest</td>
+                                                        <td><pre><pre>java.lang.AssertionError: toast查找失败サイト内直接振替成功
+	at com.voox.util.Utils.checkToast(Utils.java:137)
+	at com.voox.test.assets.AssetsStreamTest.chainWithdrawTest(AssetsStreamTest.java:116)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.retryFailed(TestInvoker.java:213)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:58)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at com.intellij.rt.testng.IDEARemoteTestNG.run(IDEARemoteTestNG.java:66)
+	at com.intellij.rt.testng.RemoteTestNGStarter.main(RemoteTestNGStarter.java:109)
+</pre></pre></td>
+                                                    </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                </ul>
+        </div>
+    </div>
+
+    <div class='subview-right left'>
+        <div class='view-summary'>
+            <h5 class='exception-name'></h5>
+        </div>
+    </div>
+</div>
+<!-- exception view -->
+<div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>22</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>22</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Dec 22, 2025 03:34:27 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Dec 22, 2025 04:46:58 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>1h 12m 31s+444ms</div>
+				</div>
+			</div>
+			<div class='col s6'>
+				<div class='card-panel dashboard-categories'>
+					<span class='right label cyan white-text'>Categories</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Passed</th>
+							<th>Failed</th>
+							<th>Others</th>
+							<th>Passed %</th>
+						</tr>
+						<tr>
+							<td>Derivatives</td>
+							<td>8</td>
+							<td>0</td>
+							<td>1</td>
+							<td>
+									88.889%
+							</td>
+						</tr>
+						<tr>
+							<td>Assets</td>
+							<td>4</td>
+							<td>0</td>
+							<td>2</td>
+							<td>
+									66.667%
+							</td>
+						</tr>
+						<tr>
+							<td>Home</td>
+							<td>3</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+						<tr>
+							<td>Spot</td>
+							<td>4</td>
+							<td>0</td>
+							<td>0</td>
+							<td>
+									100%
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 19,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 3,
+				exceptionsParent: 3,
+				
+				passChild: 19,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 3,
+				infoChild: 0,
+				exceptionsChild: 103,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+ 		<script type='text/javascript'>
+ 		</script>
+	</body>
+	
+</html>
